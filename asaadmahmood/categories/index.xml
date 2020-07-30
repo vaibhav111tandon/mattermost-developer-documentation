@@ -6,10 +6,28 @@
     <description>Recent content in Categories on Mattermost Developers</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>testing</title>
+      <link>/categories/testing/</link>
+      <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ui automation</title>
+      <link>/categories/ui-automation/</link>
+      <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/ui-automation/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Go</title>
@@ -71,15 +89,6 @@
       <pubDate>Wed, 11 Dec 2019 10:49:35 +0200</pubDate>
       
       <guid>/categories/plugins/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>testing</title>
-      <link>/categories/testing/</link>
-      <pubDate>Sun, 29 Sep 2019 00:00:00 -0400</pubDate>
-      
-      <guid>/categories/testing/</guid>
       <description></description>
     </item>
     

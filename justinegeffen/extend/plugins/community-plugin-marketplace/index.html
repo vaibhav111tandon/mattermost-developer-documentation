@@ -112,6 +112,10 @@
             
             
             
+                
+                    <li class="active"><a href="../../../extend/getting-started">Extend</a></li>
+                
+            
         
             
             
@@ -554,13 +558,14 @@
                     <h1 class="mt-0 doc-title">
                         Community Plugins in the Marketplace
                     </h1>
-                    <p>Once your plugin has reached a certain level of quality, you might consider submitting it to the Plugin Marketplace. The Plugin Marketplace is a platform that supports discovery, installation and updates of plugins directly within Mattermost. It&rsquo;s a great way to get feedback on your plugin and help make it more popular. Once your plugin is accepted to the Marketplace, Mattermost will also send you swag!</p>
-<h3 id="requirements-for-adding-a-community-plugin-to-the-marketplace">Requirements for Adding A Community Plugin to the Marketplace&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#requirements-for-adding-a-community-plugin-to-the-marketplace"></i></a> </h3>
+                    <p>When your plugin has reached a certain level of quality, you might consider submitting it to the Plugin Marketplace. The Plugin Marketplace is a platform that supports discovery, installation and updates of plugins directly within Mattermost. It&rsquo;s a great way to get feedback on your plugin and help make it more popular.</p>
+<p>Once your plugin is accepted to the Marketplace, Mattermost will also send you swag!</p>
+<h3 id="requirements-for-adding-a-community-plugin-to-the-marketplace">Requirements for Adding a Community Plugin to the Marketplace&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#requirements-for-adding-a-community-plugin-to-the-marketplace"></i></a> </h3>
 <p>Every community plugin must fulfill the following checklist to be added to the Marketplace:</p>
 <p><strong>Product Requirements (Checked by a Product Manager)</strong></p>
 <ol>
 <li>The plugin is published under an Apache v2 compatible license (e.g. no GPL, APGL). A list of compatible licenses can be found <a href="https://apache.org/legal/resolved.html#category-a">here</a>.</li>
-<li>The source code is available in a public git repository.</li>
+<li>The source code is available in a public Git repository.</li>
 <li>There is a public issue or bug tracker for the plugin, which is linked in the plugin documentation and linked via <code>support_url</code> in the manifest.</li>
 <li>The plugin provides detailed usage documentation with at least one screenshot of the plugin in action, list of features, and a development guide. This is typically a <code>README</code> file or a landing page on the web. The link to the documentation is set as <code>homepage_url</code> in the manifest. A great example is the <a href="https://github.com/mattermost/mattermost-plugin-github/blob/master/README.md"><code>README</code> of the GitHub plugin</a>.</li>
 <li>For the current release and future releases, a changelog must be published. The link to the current release notes has to be recorded in the <code>release_notes_url</code> property of the <code>plugin.json</code> manifest. For example GitHub releases can be used to publish the changelog.</li>
@@ -604,7 +609,7 @@
 <li>The <em>owner</em> opens a pull request, which adds the plugin to <code>plugins.json</code> using <code>generator add $REP $TAG --community</code>. Only a functional review by one dev and one QA member is needed for this pull request.</li>
 <li>After the pull request is merged, the plugin gets promoted across Mattermost social media and swag is sent to the maintainer. If there are multiple maintainers, everyone gets swag.</li>
 </ol>
-<h3 id="process-for-updating-community-plugin-in-the-plugin-marketplace">Process for Updating Community Plugin in the Plugin Marketplace&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#process-for-updating-community-plugin-in-the-plugin-marketplace"></i></a> </h3>
+<h3 id="process-for-updating-a-community-plugin-in-the-plugin-marketplace">Process for Updating a Community Plugin in the Plugin Marketplace&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#process-for-updating-a-community-plugin-in-the-plugin-marketplace"></i></a> </h3>
 <ol>
 <li>Open an issue on the Plugin Marketplace repository using <a href="https://github.com/mattermost/mattermost-marketplace/issues/new?template=update_plugin.md">a pre-defined template for existing plugins</a>. The template contains the checklist above, so you can check the items. Please also point out which commit should be used for the review. You may cut a release candidate (RC) for the reviews.</li>
 <li>The  <em>owner</em> submits a pull request to merge the upstream changes. Reviews are requested by the <em>owner</em>. The reviewers point out general discovered issues in the pull request or on the bug tracker of the community plugin. After all blocking issues are resolved, they approve the pull request.</li>
@@ -618,7 +623,7 @@
 <h3 id="security-issues">Security Issues&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#security-issues"></i></a> </h3>
 <p>Any security issues found in the plugin should be reported by email to <code>responsibledisclosure@mattermost.com</code> or sent directly to a member of the <a href="https://developers.mattermost.com/internal/rd-teams/#security-team">Security team</a> on the <a href="https://community.mattermost.com/">Community Server</a>.</p>
 <h3 id="take-down-policy">Take Down Policy&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#take-down-policy"></i></a> </h3>
-<p>If an medium or greater security issue or bug that prevents the usage of the plugin for many users is not fixed within 14 days, the plugin will be removed from the Marketplace. It may be resubmitted once the issue is resolved. Mattermost reserves the right to take down plugins at any time if a fix for a security issue is not forthcoming or the issue is critical enough to justify an immediate takedown.</p>
+<p>If an medium or greater security issue or bug that prevents the usage of the plugin for many users is not fixed within 14 days, the plugin will be removed from the Marketplace. It may be resubmitted once the issue is resolved. Mattermost reserves the right to take down plugins at any time if a fix for a security issue is not forthcoming or the issue is critical enough to justify an immediate take down.</p>
 
 
                 </div>

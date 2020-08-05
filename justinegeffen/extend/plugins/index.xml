@@ -70,8 +70,9 @@ However we must ensure that our Community server remains stable for everyone. Th
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/extend/plugins/community-plugin-marketplace/</guid>
-      <description>Once your plugin has reached a certain level of quality, you might consider submitting it to the Plugin Marketplace. The Plugin Marketplace is a platform that supports discovery, installation and updates of plugins directly within Mattermost. It&amp;rsquo;s a great way to get feedback on your plugin and help make it more popular. Once your plugin is accepted to the Marketplace, Mattermost will also send you swag!
-Requirements for Adding A Community Plugin to the Marketplace Every community plugin must fulfill the following checklist to be added to the Marketplace:</description>
+      <description>When your plugin has reached a certain level of quality, you might consider submitting it to the Plugin Marketplace. The Plugin Marketplace is a platform that supports discovery, installation and updates of plugins directly within Mattermost. It&amp;rsquo;s a great way to get feedback on your plugin and help make it more popular.
+Once your plugin is accepted to the Marketplace, Mattermost will also send you swag!
+Requirements for Adding a Community Plugin to the Marketplace Every community plugin must fulfill the following checklist to be added to the Marketplace:</description>
     </item>
     
     <item>

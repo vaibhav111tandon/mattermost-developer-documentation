@@ -91,7 +91,7 @@ How can a plugin enable its configuration through the System Console? Once a plu
       
       <guid>/extend/plugins/source-available-license/</guid>
       <description>Some plugins authored by Mattermost are licensed under the Mattermost Source Available License. This document outlines how to apply the license in various situations.
-How do I apply the license to an enterprise-only plugin? An Enterprise-only plugin is a plugin that requires a valid Mattermost Enterprise E20 license. It is not designed to be used with Team Edition or any other Enterprise license.
+How do I apply the license to an Enterprise-only plugin? An Enterprise-only plugin is a plugin that requires a valid Mattermost Enterprise E20 license. It is not designed to be used with Team Edition or any other Enterprise license.
  Add the LICENSE file to the root of your plugin repository.</description>
     </item>
     

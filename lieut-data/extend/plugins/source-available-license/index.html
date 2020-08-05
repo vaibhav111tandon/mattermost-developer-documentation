@@ -589,9 +589,9 @@
 </span><span style="color:#030;font-weight:bold"></span>
 This repository is licensed under the [<span style="color:#309;font-weight:bold">Mattermost Source Available License</span>](<span style="color:#309">LICENSE</span>) and requires a valid Enterprise E20 license. See [<span style="color:#309;font-weight:bold">Mattermost Source Available License</span>](<span style="color:#309">https://docs.mattermost.com/overview/faq.html#mattermost-source-available-license</span>) to learn more.
 </code></pre></div><h2 id="how-do-i-apply-the-license-to-a-mixed-license-plugin">How do I apply the license to a mixed-license plugin?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#how-do-i-apply-the-license-to-a-mixed-license-plugin"></i></a> </h2>
-<p>An mixed-license plugin is a plugin some of whose components require a valid Mattermost Enterprise E20 license. Not all features are available when used with Team Edition or any other enterprise license.</p>
+<p>An mixed-license plugin includes components that require a valid Mattermost Enterprise E20 license. Not all features are available when used with Team Edition or any other enterprise license.</p>
 <ol>
-<li>Organize the enterprise-only, server-side parts of your plugin in a dedicated folder, typically <code>server/enterprise</code>.</li>
+<li>Organize the Enterprise-only, server-side parts of your plugin in a dedicated folder, typically <code>server/enterprise</code>.</li>
 <li>Add the <a href="LICENSE">LICENSE</a> file to the <code>server/enterprise</code> folder.</li>
 <li>Symlink that license in the root of your repository as <code>LICENSE.enterprise</code>.</li>
 <li>Add the following section to your README.md directly below the opening paragraph:</li>

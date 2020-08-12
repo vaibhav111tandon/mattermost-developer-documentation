@@ -762,7 +762,7 @@ Select <code>Show More</code> and hit <code>Download Profile</code>
 <li>
 <p>Go to Networking tab and update the DNS settings.</p>
 <ul>
-<li>Select for the Mode to be <code>Split DNS</code>.</li>
+<li>Select for the Mode to be <code>Full DNS</code>.</li>
 <li>As <code>Servers</code> put: <code>pritunl.core.cloud.mattermost.com</code> which is VPN&rsquo;s server IP.</li>
 <li>In <code>Domains</code> put: <code>cloud.mattermost.com</code>, this will split traffic for those domains
 <span style="display:block;text-align:center;width:50%"><img src="../../../img/vpn_cloud_6.jpg" alt="Network settings Viscosity"></span></li>
@@ -770,7 +770,13 @@ Select <code>Show More</code> and hit <code>Download Profile</code>
 </li>
 </ul>
 <ol start="6">
-<li>After following these steps you should be able to connect to VPN and then to resolve private DNS entries.</li>
+<li>
+<p>Add, if it is not there, in your <code>/etc/resolv.conf</code>:
+<code>nameserver 10.247.0.2</code></p>
+</li>
+<li>
+<p>After following these steps you should be able to connect to VPN and then to resolve private DNS entries.</p>
+</li>
 </ol>
 <h3 id="pritunl-client">Pritunl client&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#pritunl-client"></i></a> </h3>
 <ol>
@@ -798,10 +804,14 @@ into <code>Import Profile URI</code>
 </li>
 <li>
 <p>On the config change the line that says:</p>
-<p><code>remote X.XXX.XXX.XX 1194 UDP</code> to be:</p>
-<p><code>remote pritunl.core.cloud.mattermost.com 1194 UDP</code></p>
+<p><code>remote X.XXX.XXX.XX 1194 udp</code> to be:</p>
+<p><code>remote pritunl.core.cloud.mattermost.com 1194 udp</code></p>
 <p><strong>NOTE:</strong> Do NOT change the port, it will be either 1194, 1195 or something else
 <span style="display:block;text-align:center;width:50%"><img src="../../../img/vpn_cloud_11.jpg" alt="Pritunl Config remote"></span></p>
+</li>
+<li>
+<p>Add, if it is not there, in your <code>/etc/resolv.conf</code>:
+<code>nameserver 10.247.0.2</code></p>
 </li>
 <li>
 <p>After following these steps you should be able to connect to VPN and resolve private DNS entries.</p>

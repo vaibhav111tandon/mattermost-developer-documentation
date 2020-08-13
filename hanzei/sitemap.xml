@@ -48,6 +48,11 @@
   </url>
   
   <url>
+    <loc>/contribute/plugins/help-wanted-tickets/</loc>
+    <lastmod>2018-03-19T12:01:23-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/internal/mobile-build-process/bump-version-number/</loc>
     <lastmod>2017-11-07T14:28:35-05:00</lastmod>
   </url>
@@ -100,6 +105,11 @@
   <url>
     <loc>/contribute/server/</loc>
     <lastmod>2018-04-19T12:01:23-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/contribute/plugins/developer-setup/</loc>
+    <lastmod>2018-03-19T12:01:23-04:00</lastmod>
   </url>
   
   <url>
@@ -760,11 +770,6 @@
   </url>
   
   <url>
-    <loc>/contribute/plugins/developer-setup/</loc>
-    <lastmod>2018-03-19T12:01:23-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/contribute/desktop/code-signing/</loc>
     <lastmod>2018-01-16T10:32:51-05:00</lastmod>
   </url>
@@ -867,6 +872,10 @@
   </url>
   
   <url>
+    <loc>/extend/plugins/webapp/best-practices/</loc>
+  </url>
+  
+  <url>
     <loc>/contribute/containers/</loc>
   </url>
   
@@ -875,15 +884,7 @@
   </url>
   
   <url>
-    <loc>/extend/plugins/webapp/best-practices/</loc>
-  </url>
-  
-  <url>
     <loc>/contribute/mvp/</loc>
-  </url>
-  
-  <url>
-    <loc>/extend/plugins/webapp/proper-configuration/</loc>
   </url>
   
   <url>

@@ -396,9 +396,7 @@
                             
                                 <a class="item " href="../../../extend/plugins/webapp/actions/">Redux Actions</a>
                             
-                                <a class="item " href="../../../extend/plugins/webapp/best-practices/">Design Best Practices</a>
-                            
-                                <a class="item " href="../../../extend/plugins/webapp/proper-configuration/">Proper Configuration</a>
+                                <a class="item " href="../../../extend/plugins/webapp/best-practices/">Best Practices</a>
                             
                         </ul>
                     
@@ -599,9 +597,10 @@
                         Developer Setup
                     </h1>
                     <p>Once you have your <a href="../../../contribute/server/developer-setup">server</a> and <a href="../../../contribute/webapp/developer-setup">webapp</a> set up, you can start developing on plugins.</p>
-<p>For developing on Mattermost-managed plugins, each plugin&rsquo;s setup instructions can be found in the plugin&rsquo;s repository&rsquo;s README. Some plugins do not have external dependencies and require little to no setup, like the <a href="https://github.com/mattermost/mattermost-plugin-todo">Todo Plugin</a> while others require an external service to be set up, like the <a href="https://github.com/mattermost/mattermost-plugin-jira">Jira Plugin</a> and <a href="https://github.com/mattermost/mattermost-plugin-github">GitHub Plugin</a>.</p>
+<p>For developing on Mattermost-managed plugins, each plugin&rsquo;s setup instructions can be found in the plugin repository&rsquo;s README. Some plugins do not have external dependencies and require little to no setup, like the <a href="https://github.com/mattermost/mattermost-plugin-todo">Todo Plugin</a> while others require an external service to be set up, like the <a href="https://github.com/mattermost/mattermost-plugin-jira">Jira Plugin</a> and <a href="https://github.com/mattermost/mattermost-plugin-github">GitHub Plugin</a>.</p>
 <h2 id="set-up-your-environment-to-deploy-plugins">Set up your environment to deploy plugins&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#set-up-your-environment-to-deploy-plugins"></i></a> </h2>
 <h3 id="deploying-with-local-mode">Deploying with Local Mode&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#deploying-with-local-mode"></i></a> </h3>
+<p>Note: Deploying with Local Mode will only work for plugins that have been updated with the functionality from the <a href="https://github.com/mattermost/mattermost-plugin-starter-template">Plugin Starter Template</a>.</p>
 <p>If your Mattermost server is running locally, you can enable <a href="https://docs.mattermost.com/administration/mmctl-cli-tool.html#local-mode">local mode</a> to streamline deploying your plugin. Edit your server configuration as follows:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#309;font-weight:bold">&#34;ServiceSettings&#34;</span>: {

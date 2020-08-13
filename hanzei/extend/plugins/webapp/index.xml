@@ -44,23 +44,13 @@ Prerequisites This guide assumes you have already set up your plugin development
     </item>
     
     <item>
-      <title>Design Best Practices</title>
+      <title>Best Practices</title>
       <link>/extend/plugins/webapp/best-practices/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/extend/plugins/webapp/best-practices/</guid>
-      <description>Actions that apply to specific Channels  Recommendation: Have your plugin register the actions to the channel header. This makes it quickly accessible for users and the actions apply on the channel they&amp;rsquo;re viewing. Example: Zoom meeting posts to a channel  You can additionally register a slash command on the server-side to take channel-specific actions.
+      <description>Design Best Practices Actions that apply to specific Channels  Recommendation: Have your plugin register the actions to the channel header. This makes it quickly accessible for users and the actions apply on the channel they&amp;rsquo;re viewing. Example: Zoom meeting posts to a channel  You can additionally register a slash command on the server-side to take channel-specific actions.
  Example: Jira project actions  Actions that apply to specific messages  Recommendation: Have your plugin register a post dropdown menu component with some text, icon and an action function.</description>
-    </item>
-    
-    <item>
-      <title>Proper Configuration</title>
-      <link>/extend/plugins/webapp/proper-configuration/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/extend/plugins/webapp/proper-configuration/</guid>
-      <description>Developing in the plugin&amp;rsquo;s webapp folder In order for your IDE to know the root directory of the plugin&amp;rsquo;s webapp code, it is advantageous to open the IDE in the webapp folder itself when working on the webapp portion of the plugin. This way, the IDE is aware of files such as webpack.config.js and tsconfig.json.
-Using the Mattermost server&amp;rsquo;s SiteURL in your webapp plugin In order to make sure your plugin has full compatibility with your Mattermost server, you should use the server&amp;rsquo;s configured SiteURL in each API call you send to the server from the webapp.</description>
     </item>
     
   </channel>

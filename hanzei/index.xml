@@ -102,6 +102,15 @@ Customization steps With that in mind, customizing and deploying your Mattermost
     </item>
     
     <item>
+      <title>Help Wanted Tickets</title>
+      <link>/contribute/plugins/help-wanted-tickets/</link>
+      <pubDate>Mon, 19 Mar 2018 12:01:23 -0400</pubDate>
+      
+      <guid>/contribute/plugins/help-wanted-tickets/</guid>
+      <description>Each plugin&amp;rsquo;s Help Wanted tickets are located in the respective plugin&amp;rsquo;s GitHub repository. In order to browse all of the open tickets, see this issue in the server repository with links to specific plugin repositories, and queries for Help Wanted tickets in each repository. The &amp;ldquo;All Plugins Up for Grabs&amp;rdquo; link there is useful to browse all repositories at once.</description>
+    </item>
+    
+    <item>
       <title>Bump Version Number</title>
       <link>/internal/mobile-build-process/bump-version-number/</link>
       <pubDate>Tue, 07 Nov 2017 14:28:35 -0500</pubDate>
@@ -168,8 +177,8 @@ I want to know when someone says something Tracking what gets posted into a chan
       
       <guid>/extend/plugins/developer-setup/</guid>
       <description>Once you have your server and webapp set up, you can start developing on plugins.
-For developing on Mattermost-managed plugins, each plugin&amp;rsquo;s setup instructions can be found in the plugin&amp;rsquo;s repository&amp;rsquo;s README. Some plugins do not have external dependencies and require little to no setup, like the Todo Plugin while others require an external service to be set up, like the Jira Plugin and GitHub Plugin.
-Set up your environment to deploy plugins Deploying with Local Mode If your Mattermost server is running locally, you can enable local mode to streamline deploying your plugin.</description>
+For developing on Mattermost-managed plugins, each plugin&amp;rsquo;s setup instructions can be found in the plugin repository&amp;rsquo;s README. Some plugins do not have external dependencies and require little to no setup, like the Todo Plugin while others require an external service to be set up, like the Jira Plugin and GitHub Plugin.
+Set up your environment to deploy plugins Deploying with Local Mode Note: Deploying with Local Mode will only work for plugins that have been updated with the functionality from the Plugin Starter Template.</description>
     </item>
     
     <item>
@@ -203,6 +212,15 @@ Note: MM-9791 introduced using docker-compose to manage containers.</description
       <description>Running and Building the Apps Use the Makefile commands to run and build the apps. See these instructions for developing on a real device.
 Adding New Dependencies to the Project If you need to add a new dependency to the project, it is important to add them in the right way. Instructions for adding different types of dependencies are described below.
 JavaScript Only If you need to add a new JavaScript dependency that is not related to React Native, use npm, not yarn.</description>
+    </item>
+    
+    <item>
+      <title>Developer Setup</title>
+      <link>/contribute/plugins/developer-setup/</link>
+      <pubDate>Mon, 19 Mar 2018 12:01:23 -0400</pubDate>
+      
+      <guid>/contribute/plugins/developer-setup/</guid>
+      <description>Please see the plugin developer setup and developer workflow pages for information on the plugin development environment.</description>
     </item>
     
     <item>
@@ -269,7 +287,7 @@ brew install node@10 libpng   For other platforms, install Node.js v10 from http
       <pubDate>Sat, 11 Jul 2020 23:00:00 -0400</pubDate>
       
       <guid>/extend/plugins/developer-workflow/</guid>
-      <description>Common make commands  make dist - Compile the plugin into a g-zipped file, ready to upload to a Mattermost server. The file is saved in the plugin repo&amp;rsquo;s dist folder. make deploy - Compiles the plugin using the make dist command, then automatically deploys the plugin to the Mattermost server make watch - Uses webpack&amp;rsquo;s watch feature to re-compile and deploy the webapp portion of your plugin on any change to the webapp/src folder make test - Runs the plugin&amp;rsquo;s server tests and webapp tests make check-style - Runs linting checks on the plugin&amp;rsquo;s server and webapp folders make enable - Enables the plugin on the Mattermost server make disable - Disables the plugin on the Mattermost server make reset - Disables and re-enables the plugin on the Mattermost server make debug-plugin - Starts a delve process and attaches it to your running plugin  You can run the development build of the plugin by setting the environment variable MM_DEBUG=1, or prefixing the variable at the beginning of the make command.</description>
+      <description>Common make commands for working with plugins  make dist - Compile the plugin into a g-zipped file, ready to upload to a Mattermost server. The file is saved in the plugin repo&amp;rsquo;s dist folder. make deploy - Compiles the plugin using the make dist command, then automatically deploys the plugin to the Mattermost server make watch - Uses webpack&amp;rsquo;s watch feature to re-compile and deploy the webapp portion of your plugin on any change to the webapp/src folder make test - Runs the plugin&amp;rsquo;s server tests and webapp tests make check-style - Runs linting checks on the plugin&amp;rsquo;s server and webapp folders make enable - Enables the plugin on the Mattermost server make disable - Disables the plugin on the Mattermost server make reset - Disables and re-enables the plugin on the Mattermost server make debug-plugin - Starts a delve process and attaches it to your running plugin  You can run the development build of the plugin by setting the environment variable MM_DEBUG=1, or prefixing the variable at the beginning of the make command.</description>
     </item>
     
     <item>
@@ -1256,15 +1274,6 @@ npm install -g npm@6 </description>
     </item>
     
     <item>
-      <title>Developer Setup</title>
-      <link>/contribute/plugins/developer-setup/</link>
-      <pubDate>Mon, 19 Mar 2018 12:01:23 -0400</pubDate>
-      
-      <guid>/contribute/plugins/developer-setup/</guid>
-      <description>Please see the plugin developer setup and developer workflow pages for information on the plugin development environment.</description>
-    </item>
-    
-    <item>
       <title>Code Signing</title>
       <link>/contribute/desktop/code-signing/</link>
       <pubDate>Tue, 16 Jan 2018 10:32:51 -0500</pubDate>
@@ -1381,23 +1390,13 @@ How can plugins make sure http requests are authentic? Plugins can implement the
     </item>
     
     <item>
-      <title>Design Best Practices</title>
+      <title>Best Practices</title>
       <link>/extend/plugins/webapp/best-practices/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/extend/plugins/webapp/best-practices/</guid>
-      <description>Actions that apply to specific Channels  Recommendation: Have your plugin register the actions to the channel header. This makes it quickly accessible for users and the actions apply on the channel they&amp;rsquo;re viewing. Example: Zoom meeting posts to a channel  You can additionally register a slash command on the server-side to take channel-specific actions.
+      <description>Design Best Practices Actions that apply to specific Channels  Recommendation: Have your plugin register the actions to the channel header. This makes it quickly accessible for users and the actions apply on the channel they&amp;rsquo;re viewing. Example: Zoom meeting posts to a channel  You can additionally register a slash command on the server-side to take channel-specific actions.
  Example: Jira project actions  Actions that apply to specific messages  Recommendation: Have your plugin register a post dropdown menu component with some text, icon and an action function.</description>
-    </item>
-    
-    <item>
-      <title>Proper Configuration</title>
-      <link>/extend/plugins/webapp/proper-configuration/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/extend/plugins/webapp/proper-configuration/</guid>
-      <description>Developing in the plugin&amp;rsquo;s webapp folder In order for your IDE to know the root directory of the plugin&amp;rsquo;s webapp code, it is advantageous to open the IDE in the webapp folder itself when working on the webapp portion of the plugin. This way, the IDE is aware of files such as webpack.config.js and tsconfig.json.
-Using the Mattermost server&amp;rsquo;s SiteURL in your webapp plugin In order to make sure your plugin has full compatibility with your Mattermost server, you should use the server&amp;rsquo;s configured SiteURL in each API call you send to the server from the webapp.</description>
     </item>
     
   </channel>

@@ -8,7 +8,7 @@
     <head>
         <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title> Design Best Practices</title>
+<title> Best Practices</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">   
 <meta http-equiv="content-language" content="en-us" />
 
@@ -156,7 +156,7 @@
             <div class="row">
                 <div class="col-lg-3 sidebar">
     <div class="sidebar__menu-toggle">
-        Design Best Practices
+        Best Practices
         <i class="fa fa-bars pull-right"></i>
     </div>
     <div class="row sidebar__links">
@@ -368,7 +368,7 @@
                             
                                 <a class="item " href="../../../../extend/plugins/server/debugging/"></a>
                             
-                                <a class="item " href="../../../../extend/plugins/server/best-practices/">Best Practices</a>
+                                <a class="item active" href="../../../../extend/plugins/server/best-practices/">Best Practices</a>
                             
                         </ul>
                     
@@ -398,9 +398,7 @@
                             
                                 <a class="item " href="../../../../extend/plugins/webapp/actions/">Redux Actions</a>
                             
-                                <a class="item active" href="../../../../extend/plugins/webapp/best-practices/">Design Best Practices</a>
-                            
-                                <a class="item " href="../../../../extend/plugins/webapp/proper-configuration/">Proper Configuration</a>
+                                <a class="item active" href="../../../../extend/plugins/webapp/best-practices/">Best Practices</a>
                             
                         </ul>
                     
@@ -529,18 +527,20 @@
 
                         
                         
+                            
+                        
 
                         
                             
                         
 
-                        <span class="item ">
-                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                        <span class="item active">
+                            <i class="sub-menu__toggle fa fa-minus-square-o" aria-hidden="true" style="display: none"></i>
                             
-                                <a href="../../../../extend/plugins/best-practices/"> Best Practices</a></span>
+                                <a class="active" href="../../../../extend/plugins/best-practices/"> Best Practices</a></span>
                             
                         </span>
-                        <ul class="sub-menu" >
+                        <ul class="sub-menu" style="display: block">
                             
                         </ul>
                     
@@ -598,9 +598,10 @@
 
 
                     <h1 class="mt-0 doc-title">
-                        Design Best Practices
+                        Best Practices
                     </h1>
-                    <h3 id="actions-that-apply-to-specific-channels">Actions that apply to specific Channels&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#actions-that-apply-to-specific-channels"></i></a> </h3>
+                    <h2 id="design-best-practices">Design Best Practices&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#design-best-practices"></i></a> </h2>
+<h3 id="actions-that-apply-to-specific-channels">Actions that apply to specific Channels&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#actions-that-apply-to-specific-channels"></i></a> </h3>
 <ul>
 <li>Recommendation: Have your plugin register the actions to <a href="https://developers.mattermost.com/extend/plugins/webapp/reference/#registerChannelHeaderButtonAction">the channel header</a>. This makes it quickly accessible for users and the actions apply on the channel they&rsquo;re viewing.</li>
 <li>Example: Zoom meeting posts to a channel</li>
@@ -658,7 +659,27 @@
 <li>Recommendation: Have your plugin add a component to the emoji picker. This is not yet supported, but some <a href="https://github.com/mattermost/mattermost-server/issues/10412#issuecomment-481776595">work had previously started</a> with the issue currently opened as Help Wanted.</li>
 <li>Examples: Bitmoji plugin; GIFs via Giphy or Gfycat</li>
 </ul>
+<h2 id="setting-up-the-plugin-to-properly-communicate-with-the-mattermost-server">Setting up the plugin to properly communicate with the Mattermost server&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#setting-up-the-plugin-to-properly-communicate-with-the-mattermost-server"></i></a> </h2>
+<h3 id="using-the-mattermost-servers-siteurl-in-your-web-app-plugin">Using the Mattermost server&rsquo;s SiteURL in your web app plugin&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#using-the-mattermost-servers-siteurl-in-your-web-app-plugin"></i></a> </h3>
+<p>In order to make sure your plugin has full compatibility with your Mattermost server, you should use the server&rsquo;s configured SiteURL in each API call you send to the server from the webapp. Here&rsquo;s an <a href="https://github.com/mattermost/mattermost-plugin-jira/blob/19a9c2442817132b4eee5c77e259b80a40188a6a/webapp/src/selectors/index.js#L13-L26">example</a> of how to compute the SiteURL:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">const</span> getPluginServerRoute <span style="color:#555">=</span> (state) =&gt; {
+    <span style="color:#069;font-weight:bold">const</span> config <span style="color:#555">=</span> getConfig(state);
 
+    <span style="color:#069;font-weight:bold">let</span> basePath <span style="color:#555">=</span> <span style="color:#c30">&#39;&#39;</span>;
+    <span style="color:#069;font-weight:bold">if</span> (config <span style="color:#555">&amp;&amp;</span> config.SiteURL) {
+        basePath <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> URL(config.SiteURL).pathname;
+
+        <span style="color:#069;font-weight:bold">if</span> (basePath <span style="color:#555">&amp;&amp;</span> basePath[basePath.length <span style="color:#555">-</span> <span style="color:#f60">1</span>] <span style="color:#555">===</span> <span style="color:#c30">&#39;/&#39;</span>) {
+            basePath <span style="color:#555">=</span> basePath.substr(<span style="color:#f60">0</span>, basePath.length <span style="color:#555">-</span> <span style="color:#f60">1</span>);
+        }
+    }
+
+    <span style="color:#069;font-weight:bold">return</span> basePath <span style="color:#555">+</span> <span style="color:#c30">&#39;/plugins/&#39;</span> <span style="color:#555">+</span> PluginId;
+};
+</code></pre></div><h3 id="including-the-servers-csrf-token-in-your-webapp-plugins-requests">Including the server&rsquo;s CSRF token in your webapp plugin&rsquo;s requests&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#including-the-servers-csrf-token-in-your-webapp-plugins-requests"></i></a> </h3>
+<p>The Mattermost server can be configured to require a CSRF token to be present in HTTP requests sent from the webapp. In order to include the token in each request, you can use the <code>mattermost-redux</code> library&rsquo;s <code>Client4.getOptions</code> function to add the token to your <code>fetch</code> request. Here&rsquo;s an <a href="https://github.com/mattermost/mattermost-plugin-jira/blob/19a9c2442817132b4eee5c77e259b80a40188a6a/webapp/src/client/index.js#L14">example</a> of how to include the CSRF token.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">const</span> response <span style="color:#555">=</span> await fetch(url, Client4.getOptions(options));
+</code></pre></div>
 
                 </div>
             </div>

@@ -450,6 +450,10 @@
   </url>
   
   <url>
+    <loc>/extend/plugins/source-available-license/</loc>
+  </url>
+  
+  <url>
     <loc>/extend/plugins/helpers/</loc>
     <lastmod>2019-09-30T00:00:00-05:00</lastmod>
   </url>

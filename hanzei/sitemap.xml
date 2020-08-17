@@ -43,16 +43,6 @@
   </url>
   
   <url>
-    <loc>/contribute/getting-started/</loc>
-    <lastmod>2018-05-19T12:01:23-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/contribute/plugins/help-wanted-tickets/</loc>
-    <lastmod>2018-03-19T12:01:23-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/internal/mobile-build-process/bump-version-number/</loc>
     <lastmod>2017-11-07T14:28:35-05:00</lastmod>
   </url>
@@ -83,11 +73,6 @@
   </url>
   
   <url>
-    <loc>/extend/plugins/developer-setup/</loc>
-    <lastmod>2020-07-11T23:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/contribute/server/developer-setup/</loc>
     <lastmod>2020-02-01T19:50:32-04:00</lastmod>
   </url>
@@ -100,16 +85,6 @@
   <url>
     <loc>/contribute/mobile/developer-setup/developer-workflow/</loc>
     <lastmod>2018-05-20T11:35:32-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/contribute/server/</loc>
-    <lastmod>2018-04-19T12:01:23-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/contribute/plugins/developer-setup/</loc>
-    <lastmod>2018-03-19T12:01:23-04:00</lastmod>
   </url>
   
   <url>
@@ -138,11 +113,6 @@
   </url>
   
   <url>
-    <loc>/extend/plugins/developer-workflow/</loc>
-    <lastmod>2020-07-11T23:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/contribute/desktop/debugging/</loc>
     <lastmod>2019-01-22T00:00:00-05:00</lastmod>
   </url>
@@ -155,11 +125,6 @@
   <url>
     <loc>/contribute/mobile/developer-setup/makefile/</loc>
     <lastmod>2018-05-20T11:35:32-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/contribute/webapp/</loc>
-    <lastmod>2018-03-19T12:01:23-04:00</lastmod>
   </url>
   
   <url>
@@ -200,11 +165,6 @@
   <url>
     <loc>/contribute/mobile/developer-setup/run-on-device/</loc>
     <lastmod>2018-05-20T11:35:32-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/contribute/mobile/</loc>
-    <lastmod>2018-02-19T12:01:23-04:00</lastmod>
   </url>
   
   <url>
@@ -268,11 +228,6 @@
   </url>
   
   <url>
-    <loc>/contribute/redux/</loc>
-    <lastmod>2018-01-19T12:01:23-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/contribute/server/plugins/</loc>
     <lastmod>2017-08-20T11:35:32-04:00</lastmod>
   </url>
@@ -298,11 +253,6 @@
   </url>
   
   <url>
-    <loc>/contribute/desktop/</loc>
-    <lastmod>2018-01-02T10:36:34-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/contribute/redux/selectors/</loc>
     <lastmod>2017-08-20T11:35:32-04:00</lastmod>
   </url>
@@ -315,11 +265,6 @@
   <url>
     <loc>/contribute/webapp/using-i18n-extract/</loc>
     <lastmod>2020-04-20T08:31:17-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/contribute/plugins/</loc>
-    <lastmod>2018-03-19T12:01:23-04:00</lastmod>
   </url>
   
   <url>
@@ -580,11 +525,6 @@
   </url>
   
   <url>
-    <loc>/extend/</loc>
-    <lastmod>2020-07-11T23:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/pritunl/</loc>
     <lastmod>2020-06-11T12:00:00-04:00</lastmod>
   </url>
@@ -705,6 +645,11 @@
   </url>
   
   <url>
+    <loc>/extend/</loc>
+    <lastmod>2019-09-30T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/blog/avoiding-flaky-tests/</loc>
     <lastmod>2019-09-29T00:00:00-04:00</lastmod>
   </url>
@@ -765,13 +710,43 @@
   </url>
   
   <url>
+    <loc>/contribute/getting-started/</loc>
+    <lastmod>2018-05-19T12:01:23-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/extend/getting-started/</loc>
     <lastmod>2018-04-19T12:01:23-04:00</lastmod>
   </url>
   
   <url>
+    <loc>/contribute/server/</loc>
+    <lastmod>2018-04-19T12:01:23-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/contribute/webapp/</loc>
+    <lastmod>2018-03-19T12:01:23-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/contribute/mobile/</loc>
+    <lastmod>2018-02-19T12:01:23-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/contribute/redux/</loc>
+    <lastmod>2018-01-19T12:01:23-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/contribute/desktop/code-signing/</loc>
     <lastmod>2018-01-16T10:32:51-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/contribute/desktop/</loc>
+    <lastmod>2018-01-02T10:36:34-05:00</lastmod>
   </url>
   
   <url>
@@ -872,15 +847,15 @@
   </url>
   
   <url>
-    <loc>/extend/plugins/webapp/best-practices/</loc>
-  </url>
-  
-  <url>
     <loc>/contribute/containers/</loc>
   </url>
   
   <url>
     <loc>/contribute/team_contributions/</loc>
+  </url>
+  
+  <url>
+    <loc>/extend/plugins/webapp/best-practices/</loc>
   </url>
   
   <url>

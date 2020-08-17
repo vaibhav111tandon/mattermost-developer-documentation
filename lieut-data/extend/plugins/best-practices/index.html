@@ -639,31 +639,39 @@
 </ol>
 <p>For examples of custom settings see: Demo Plugin <a href="https://github.com/mattermost/mattermost-plugin-demo/blob/master/webapp/src/components/admin_settings/custom_setting.jsx"><code>CustomSetting</code></a> and Custom Attributes Plugin <a href="https://github.com/mattermost/mattermost-plugin-custom-attributes/pull/18">implementation</a>.</p>
 <h2 id="how-can-i-review-the-entire-code-base-of-a-plugin">How can I review the entire code base of a plugin?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#how-can-i-review-the-entire-code-base-of-a-plugin"></i></a> </h2>
-<p>Carry out the following steps:</p>
+<p>Sometimes, you have been working on a personal repository for a new plugin, most probably based on the <a href="https://github.com/mattermost/mattermost-plugin-starter-template/">mattermost-plugin-starter-template</a> repo. As it was a personal project, you may have pushed all of your commits directly to <code>master</code>. And now that it&rsquo;s functional, you need a reviewer to take a look at the whole thing.</p>
+<p>For this, it is useful to create a PR with only the commits you added. Follow these steps to do so:</p>
 <ol>
+<li>First of all, you need to obtain the identifier of the oldest commit that should be reviewed. You can review your history with <code>git log --oneline</code>, where you need to look for the very first commit that you added. Imagine that the output is something like the following:</li>
+</ol>
+<pre><code>f7d89b8 (HEAD -&gt; master, origin/master) Lint code
+fa99500 Fix bug
+0b3b5bd Add feature
+8f6aef3 My first commit to the plugin
+...
+... rest of commits from mattermost-plugin-starter-template
+...
+</code></pre><p>In this case, the identifier that we need to copy is <code>8f6aef3</code>.</p>
+<ol start="2">
+<li>Create a new branch without the commits that you added. Using the SHA that you copied, create the branch <code>base</code> and push it:</li>
+</ol>
+<pre><code>git branch base 8f6aef3~1
+git push origin base
+</code></pre><p>Note that <code>8f6aef3~1</code> means <em>the parent commit of <code>8f6aef3</code></em>, effectively selecting all the commits in the branch except the ones that you added.</p>
+<ol start="3">
+<li>Create a branch with all the commits, included the ones that you added, and push it. This branch, <code>compare</code>, will be an exact copy of <code>master</code>:</li>
+</ol>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git branch compare master
+git push origin compare
+</code></pre></div><ol start="4">
 <li>
-<p>Take a backup of project directory</p>
+<p>Now you have two new branches in the repository: <code>base</code> and <code>compare</code>. In Github, create a new PR in your repository, setting the <em>base</em> branch to <code>base</code> and the <em>compare</em> branch to <code>compare</code>.</p>
 </li>
 <li>
-<p>Create a dummy-master branch with no code:</p>
-<pre><code>git checkout --orphan dummy-master
-git rm -rf
-git push origin dummy-master
-</code></pre></li>
-<li>
-<p>Create a dummy-review branch from dummy-master:</p>
-<pre><code>git checkout -b dummy-review
-git add
-git commit -m &quot;Full checkin&quot;
-git push origin dummy-review
-</code></pre></li>
-<li>
-<p>Create a PR from dummy-review -&gt; dummy-master</p>
-</li>
-<li>
-<p>Code review on the resulting PR</p>
+<p>Request a code review on the resulting PR.</p>
 </li>
 </ol>
+<p>For future changes, you can always repeat this process, making sure to identify the first commit you want to be reviewed. You can also consider the more common scenario of creating a feature branch (using something like <code>git checkout -b my.feature.branch</code>) and opening a PR whenever you want to merge the changes into <code>master</code>. It&rsquo;s up to you!</p>
 
 
                 </div>

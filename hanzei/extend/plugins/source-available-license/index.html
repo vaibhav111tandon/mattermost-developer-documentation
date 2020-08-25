@@ -8,13 +8,13 @@
     <head>
         <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title> Best Practices</title>
+<title> Source Available License</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">   
 <meta http-equiv="content-language" content="en-us" />
 
 
 
-<link rel="canonical" href="../../../extend/plugins/best-practices/">
+<link rel="canonical" href="../../../extend/plugins/source-available-license/">
 
 
 <link rel="shortcut icon" type="image/png" href="../../../img/favicon-32x32.png" />
@@ -156,7 +156,7 @@
             <div class="row">
                 <div class="col-lg-3 sidebar">
     <div class="sidebar__menu-toggle">
-        Best Practices
+        Source Available License
         <i class="fa fa-bars pull-right"></i>
     </div>
     <div class="row sidebar__links">
@@ -328,7 +328,7 @@
                             
                                 <a class="item " href="../../../extend/plugins/server/debugging/"></a>
                             
-                                <a class="item active" href="../../../extend/plugins/server/best-practices/">Best Practices</a>
+                                <a class="item " href="../../../extend/plugins/server/best-practices/">Best Practices</a>
                             
                         </ul>
                     
@@ -485,6 +485,26 @@
 
                         
                         
+
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                            
+                                <a href="../../../extend/plugins/best-practices/"> Best Practices</a></span>
+                            
+                        </span>
+                        <ul class="sub-menu" >
+                            
+                        </ul>
+                    
+                        
+                        
+
+                        
+                        
                             
                         
 
@@ -495,30 +515,10 @@
                         <span class="item active">
                             <i class="sub-menu__toggle fa fa-minus-square-o" aria-hidden="true" style="display: none"></i>
                             
-                                <a class="active" href="../../../extend/plugins/best-practices/"> Best Practices</a></span>
+                                <a class="active" href="../../../extend/plugins/source-available-license/"> Source Available License</a></span>
                             
                         </span>
                         <ul class="sub-menu" style="display: block">
-                            
-                        </ul>
-                    
-                        
-                        
-
-                        
-                        
-
-                        
-                            
-                        
-
-                        <span class="item ">
-                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
-                            
-                                <a href="../../../extend/plugins/source-available-license/"> Source Available License</a></span>
-                            
-                        </span>
-                        <ul class="sub-menu" >
                             
                         </ul>
                     
@@ -570,109 +570,36 @@
 
                 <div class="col-lg-9 doc-content">
                     
-<a href="https://github.com/mattermost/mattermost-developer-documentation/edit/master/site/content/extend/plugins/best-practices.md" class="float-right edit-github">
+<a href="https://github.com/mattermost/mattermost-developer-documentation/edit/master/site/content/extend/plugins/source-available-license.md" class="float-right edit-github">
     Edit on GitHub
 </a>
 
 
                     <h1 class="mt-0 doc-title">
-                        Best Practices
+                        Source Available License
                     </h1>
-                    <p>See here for <a href="../../../extend/plugins/server/best-practices/">server-specific best practices for plugins</a>. Webapp-specific best practices are incoming.</p>
-<h2 id="how-can-a-plugin-enable-its-configuration-through-the-system-console">How can a plugin enable its configuration through the System Console?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#how-can-a-plugin-enable-its-configuration-through-the-system-console"></i></a> </h2>
-<p>Once a plugin is installed, Administrators have access to the plugin&rsquo;s configuration page in the <strong>System Console &gt; Plugins</strong> section. The configurable settings must first be defined in the plugin&rsquo;s manifest <a href="https://developers.mattermost.com/extend/plugins/manifest-reference/#settings_schema">setting schema</a>. The web app supports several basic pre-defined settings type, e.g. <code>bool</code> and <code>dropdown</code>, for which the corresponding UI components are provided in order to complete configuration in the System Console.</p>
-<p>These settings are stored within the server configuration under [<code>Plugins</code>] indexed by plugin ids. The plugin&rsquo;s server code can access their current configuration calling the <a href="https://developers.mattermost.com/extend/plugins/server/reference/#API.GetConfig"><code>getConfig</code></a> API call and can also make changes as needed with <a href="https://developers.mattermost.com/extend/plugins/server/reference/#API.SaveConfig"><code>saveConfig</code></a>.</p>
-<h2 id="how-can-a-plugin-define-its-own-setting-type">How can a plugin define its own setting type?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#how-can-a-plugin-define-its-own-setting-type"></i></a> </h2>
-<p>A plugin could define its own type of setting with a corresponding custom user interface that will be displayed in the System Console following the process below.</p>
+                    <p>Some plugins authored by Mattermost are licensed under the <a href="https://docs.mattermost.com/overview/faq.html#mattermost-source-available-license">Mattermost Source Available License</a>. This document outlines how to apply the license in various situations.</p>
+<h2 id="how-do-i-apply-the-license-to-an-enterprise-only-plugin">How do I apply the license to an Enterprise-only plugin?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#how-do-i-apply-the-license-to-an-enterprise-only-plugin"></i></a> </h2>
+<p>An Enterprise-only plugin is a plugin that requires a valid Mattermost Enterprise E20 license. It is not designed to be used with Team Edition or any other Enterprise license.</p>
 <ol>
-<li>Define a <code>type: custom</code> setting in the plugins manifest <code>settings_schema</code></li>
+<li>Add the <a href="LICENSE">LICENSE</a> file to the root of your plugin repository.</li>
+<li>Add the following section to your README.md directly below the opening paragraph:</li>
 </ol>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">&#34;settings_schema&#34;: {
-    &#34;settings&#34;: [{
-        &#34;key&#34;: &#34;NormalSetting&#34;,
-        &#34;type&#34;: &#34;text&#34;,
-<span style="background-color:#cfc">+    }, {
-</span><span style="background-color:#cfc">+        &#34;key&#34;: &#34;CustomSetting&#34;,
-</span><span style="background-color:#cfc">+        &#34;type&#34;: &#34;custom&#34;
-</span><span style="background-color:#cfc"></span>    }]
-}
-</code></pre></div><ol start="2">
-<li>
-<p>In the plugin&rsquo;s web app code, define a custom component to manage the plugin&rsquo;s custom setting and register it in the web app with <a href="https://developers.mattermost.com/extend/plugins/webapp/reference/#registerAdminConsoleCustomSetting"><code>registerAdminConsoleCustomSetting</code></a>. This component will be instantiated in the System Console with the following <code>props</code> passed in:</p>
-<ul>
-<li><code>id</code>: The setting <code>key</code> as defined in the plugin manifest within <code>settings_schema.settings</code>.</li>
-<li><code>label</code>: The text for the component label based on the setting&rsquo;s <code>displayName</code> defined in the manifest.</li>
-<li><code>helpText</code>: The help text based on the setting&rsquo;s <code>helpText</code> defined in the manifest.</li>
-<li><code>value</code>: The setting&rsquo;s current json value in the config at the time the component is loaded.</li>
-<li><code>disabled</code>: Boolean indicating if the setting is disabled by a parent component within the System Console.</li>
-<li><code>config</code>: The server configuration loaded by the web app.</li>
-<li><code>license</code>: The license information for the related Mattermost server.</li>
-<li><code>setByEnv</code>: Boolean that indicates if the setting is based on a server environment variable.</li>
-<li><code>onChange</code>: Function that receives the setting id and current json value of the setting when it has been changed within the custom component.</li>
-<li><code>setSaveNeeded</code>: Function that will prompt the System Console to enable the Save button in the plugin settings screen.</li>
-<li><code>registerSaveAction</code>: Registers the given function to be executed when the setting is saved. This is registered when the custom component is mounted.</li>
-<li><code>unRegisterSaveAction</code>: On unmount of the custom component, unRegisterSaveAction will remove the registered function executed on save of the custom component.</li>
-</ul>
-</li>
-<li>
-<p>On initialization of the custom component, the current value of the custom setting is passed in the <code>props.value</code> in a json format as read from the config. This value can be processed as necessary to display in your custom UI and ready to be modified by the end user. In the example below, it processes the initial <code>props.value</code> and sets it in a local state for the component to use as needed:</p>
-</li>
-</ol>
-<pre><code>constructor(props) {
-        super(props);
-
-        this.state = {
-            attributes: this.initAttributes(props.value),
-        }
-    }
-</code></pre><ol start="4">
-<li>When a user makes a change in the UI, the <code>OnChange</code> handler sends back the current value of the setting as a json. Additionally, <code>setSaveNeeded</code> should be called to enable the <code>Save</code> button in order for the changes to be saved.</li>
-</ol>
-<pre><code>handleChange = () =&gt; {
-    ...
-
-    this.props.onChange(this.props.id,  Array.from(this.state.attributes.values()));
-    this.props.setSaveNeeded()
-};
-</code></pre><ol start="5">
-<li>Once the user saves the changes, any handler that was registered with <code>registerSaveAction</code> will be executed to perform any additional custom actions the plugin may require, such as calling an additional endpoint within the plugin.</li>
-</ol>
-<p>For examples of custom settings see: Demo Plugin <a href="https://github.com/mattermost/mattermost-plugin-demo/blob/master/webapp/src/components/admin_settings/custom_setting.jsx"><code>CustomSetting</code></a> and Custom Attributes Plugin <a href="https://github.com/mattermost/mattermost-plugin-custom-attributes/pull/18">implementation</a>.</p>
-<h2 id="how-can-i-review-the-entire-code-base-of-a-plugin">How can I review the entire code base of a plugin?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#how-can-i-review-the-entire-code-base-of-a-plugin"></i></a> </h2>
-<p>Sometimes, you have been working on a personal repository for a new plugin, most probably based on the <a href="https://github.com/mattermost/mattermost-plugin-starter-template/">mattermost-plugin-starter-template</a> repo. As it was a personal project, you may have pushed all of your commits directly to <code>master</code>. And now that it&rsquo;s functional, you need a reviewer to take a look at the whole thing.</p>
-<p>For this, it is useful to create a PR with only the commits you added. Follow these steps to do so:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#030;font-weight:bold">## License
+</span><span style="color:#030;font-weight:bold"></span>
+This repository is licensed under the [<span style="color:#309;font-weight:bold">Mattermost Source Available License</span>](<span style="color:#309">LICENSE</span>) and requires a valid Enterprise E20 license. See [<span style="color:#309;font-weight:bold">Mattermost Source Available License</span>](<span style="color:#309">https://docs.mattermost.com/overview/faq.html#mattermost-source-available-license</span>) to learn more.
+</code></pre></div><h2 id="how-do-i-apply-the-license-to-a-mixed-license-plugin">How do I apply the license to a mixed-license plugin?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#how-do-i-apply-the-license-to-a-mixed-license-plugin"></i></a> </h2>
+<p>A mixed-license plugin includes components that require a valid Mattermost Enterprise E20 license. Not all features are available when used with Team Edition or any other enterprise license.</p>
 <ol>
-<li>First of all, you need to obtain the identifier of the oldest commit that should be reviewed. You can review your history with <code>git log --oneline</code>, where you need to look for the very first commit that you added. Imagine that the output is something like the following:</li>
+<li>Organize the Enterprise-only, server-side parts of your plugin in a dedicated folder, typically <code>server/enterprise</code>.</li>
+<li>Add the <a href="LICENSE">LICENSE</a> file to the <code>server/enterprise</code> folder.</li>
+<li>Symlink that license in the root of your repository as <code>LICENSE.enterprise</code>.</li>
+<li>Add the following section to your README.md directly below the opening paragraph:</li>
 </ol>
-<pre><code>f7d89b8 (HEAD -&gt; master, origin/master) Lint code
-fa99500 Fix bug
-0b3b5bd Add feature
-8f6aef3 My first commit to the plugin
-...
-... rest of commits from mattermost-plugin-starter-template
-...
-</code></pre><p>In this case, the identifier that we need to copy is <code>8f6aef3</code>.</p>
-<ol start="2">
-<li>Create a new branch without the commits that you added. Using the SHA that you copied, create the branch <code>base</code> and push it:</li>
-</ol>
-<pre><code>git branch base 8f6aef3~1
-git push origin base
-</code></pre><p>Note that <code>8f6aef3~1</code> means <em>the parent commit of <code>8f6aef3</code></em>, effectively selecting all the commits in the branch except the ones that you added.</p>
-<ol start="3">
-<li>Create a branch with all the commits, included the ones that you added, and push it. This branch, <code>compare</code>, will be an exact copy of <code>master</code>:</li>
-</ol>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git branch compare master
-git push origin compare
-</code></pre></div><ol start="4">
-<li>
-<p>Now you have two new branches in the repository: <code>base</code> and <code>compare</code>. In Github, create a new PR in your repository, setting the <em>base</em> branch to <code>base</code> and the <em>compare</em> branch to <code>compare</code>.</p>
-</li>
-<li>
-<p>Request a code review on the resulting PR.</p>
-</li>
-</ol>
-<p>For future changes, you can always repeat this process, making sure to identify the first commit you want to be reviewed. You can also consider the more common scenario of creating a feature branch (using something like <code>git checkout -b my.feature.branch</code>) and opening a PR whenever you want to merge the changes into <code>master</code>. It&rsquo;s up to you!</p>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#030;font-weight:bold">## License
+</span><span style="color:#030;font-weight:bold"></span>
+This repository is licensed under the Apache 2.0 License, except for the [<span style="color:#309;font-weight:bold">server/enterprise</span>](<span style="color:#309">server/enterprise</span>) directory which is licensed under the [<span style="color:#309;font-weight:bold">Mattermost Source Available License</span>](<span style="color:#309">LICENSE.enterprise</span>). See [<span style="color:#309;font-weight:bold">Mattermost Source Available License</span>](<span style="color:#309">https://docs.mattermost.com/overview/faq.html#mattermost-source-available-license</span>) to learn more.
+</code></pre></div>
 
                 </div>
             </div>

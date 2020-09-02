@@ -549,27 +549,37 @@
   </url>
   
   <url>
-    <loc>/blog/automated-ui-testing-with-cypress/</loc>
-    <lastmod>2020-07-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/</loc>
-    <lastmod>2020-07-27T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2020-07-27T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/improving-performance-through-load-testing/</loc>
+    <lastmod>2020-09-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-07-27T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/performance/</loc>
+    <lastmod>2020-09-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/testing/</loc>
+    <lastmod>2020-09-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/automated-ui-testing-with-cypress/</loc>
     <lastmod>2020-07-27T00:00:00+00:00</lastmod>
   </url>
   

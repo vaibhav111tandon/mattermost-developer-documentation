@@ -28,7 +28,7 @@ Prerequisites Mattermost plugins extend the server using a Go API. In the future
       <pubDate>Tue, 10 Jul 2018 00:00:00 -0500</pubDate>
       
       <guid>/extend/plugins/server/reference/</guid>
-      <description>This is the documentation for the Go github.com/mattermost/mattermost-server/plugin package. It can also be found on GoDoc.   The plugin package is used by Mattermost server plugins written in go. It also enables the Mattermost server to manage and interact with the running plugin environment.  Note that this package exports a large number of types prefixed with Z_. These are public only to allow their use with Hashicorp&amp;#39;s go-plugin (and net/rpc).</description>
+      <description>This is the documentation for the Go github.com/mattermost/mattermost-server/plugin package. It can also be found on GoDoc.  Run make plugin-data to generate this documentation. </description>
     </item>
     
     <item>

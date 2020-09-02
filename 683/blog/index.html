@@ -158,6 +158,26 @@
                 
                     <div class="well well-sm">
     <h5>
+        <a href="../blog/improving-performance-through-load-testing/">Improving performance (and more) through load testing </a>
+        <small class="blog-item__date pull-right">
+            Posted
+            on Sep 7, 2020
+            
+                
+                    by Claudio Costa
+                
+            
+        </small>
+    </h5>
+    <small></small>
+    <hr>
+    <p>Have you ever wondered how many active users your application can handle at the same time? If so, you are not alone. Here at Mattermost we are building a highly concurrent messaging platform for team collaboration that needs to potentially serve up to several thousands of users simultaneously.
+While standard functional testing (e.g. unit tests) is critical to verify correct behaviour of your application, it&rsquo;s usually not sufficient to guarantee its performance at scale.</p>
+    <a class="btn btn-primary btn-sm" href="../blog/improving-performance-through-load-testing/">Read More <span class="fa fa-angle-right"></span></a>
+</div>
+                
+                    <div class="well well-sm">
+    <h5>
         <a href="../blog/automated-ui-testing-with-cypress/">Automated UI Testing With Cypress</a>
         <small class="blog-item__date pull-right">
             Posted
@@ -331,27 +351,6 @@ Problem: A struct with no interface Let&rsquo;s say you are working on a large c
     <p>One of the most important parts of the Mattermost source code is the one responsible for accessing the Mattermost database - the store. Every single database access is handled by the store, so we needed to find a way to extend its functionality while introducing as little complexity as possible. This is the reason behind the current layered approach using struct embedding.
 Our store is responsible for storing and retrieving data, and sometimes we need to add functionality that is not strictly related to the database queries, for example, cache data or add instrumentation.</p>
     <a class="btn btn-primary btn-sm" href="../blog/layered-store-and-struct-embedding/">Read More <span class="fa fa-angle-right"></span></a>
-</div>
-                
-                    <div class="well well-sm">
-    <h5>
-        <a href="../blog/incorporating-golangci-lint/">Incorporating GolangCI-Lint at Mattermost</a>
-        <small class="blog-item__date pull-right">
-            Posted
-            on Jan 13, 2020
-            
-                
-                    <br>
-                    by Agniva De Sarker and Ben Schumacher
-                
-            
-        </small>
-    </h5>
-    <small></small>
-    <hr>
-    <p>At Mattermost, we have traditionally relied on the trusty go vet and gofmt checks for our CI runs. Although it works well, there are a lot of other powerful linters out there which we&rsquo;re potentially missing out on.
-Speaking of linters, the first name that inevitably comes up is staticcheck. It&rsquo;s a powerful metalinter with a whole slew of checks. But simply running staticcheck is not sufficient, because it misses out on other linters which perform a single task, but nevertheless are very powerful.</p>
-    <a class="btn btn-primary btn-sm" href="../blog/incorporating-golangci-lint/">Read More <span class="fa fa-angle-right"></span></a>
 </div>
                 
                 <div class="blog-pagination">

@@ -636,33 +636,7 @@
 
 
 
-    
-    <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">package</span> main
-
-<span style="color:#069;font-weight:bold">import</span> (
-	<span style="color:#c30">&#34;fmt&#34;</span>
-	<span style="color:#c30">&#34;net/http&#34;</span>
-
-	<span style="color:#c30">&#34;github.com/mattermost/mattermost-server/v5/plugin&#34;</span>
-)
-
-<span style="color:#09f;font-style:italic">// HelloWorldPlugin implements the interface expected by the Mattermost server to communicate
-</span><span style="color:#09f;font-style:italic">// between the server and plugin processes.
-</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">type</span> HelloWorldPlugin <span style="color:#069;font-weight:bold">struct</span> {
-	plugin.MattermostPlugin
-}
-
-<span style="color:#09f;font-style:italic">// ServeHTTP demonstrates a plugin that handles HTTP requests by greeting the world.
-</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">func</span> (p <span style="color:#555">*</span>HelloWorldPlugin) <span style="color:#c0f">ServeHTTP</span>(c <span style="color:#555">*</span>plugin.Context, w http.ResponseWriter, r <span style="color:#555">*</span>http.Request) {
-	fmt.<span style="color:#c0f">Fprint</span>(w, <span style="color:#c30">&#34;Hello, world!&#34;</span>)
-}
-
-<span style="color:#09f;font-style:italic">// This example demonstrates a plugin that handles HTTP requests which respond by greeting the
-</span><span style="color:#09f;font-style:italic">// world.
-</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">main</span>() {
-	plugin.<span style="color:#c0f">ClientMain</span>(<span style="color:#555">&amp;</span>HelloWorldPlugin{})
-}
-</code></pre></div>
+    Run <code>make plugin-godocs</code> to generate this example code.
 
 
 <p>This plugin will register an HTTP handler that will respond with &ldquo;Hello, world!&rdquo; when requested.</p>

@@ -6,10 +6,20 @@
     <description>Recent content in testing on Mattermost Developers</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/testing/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Improving performance (and more) through load testing </title>
+      <link>/blog/improving-performance-through-load-testing/</link>
+      <pubDate>Mon, 07 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/improving-performance-through-load-testing/</guid>
+      <description>Have you ever wondered how many active users your application can handle at the same time? If so, you are not alone. Here at Mattermost we are building a highly concurrent messaging platform for team collaboration that needs to potentially serve up to several thousands of users simultaneously.
+While standard functional testing (e.g. unit tests) is critical to verify correct behaviour of your application, it&amp;rsquo;s usually not sufficient to guarantee its performance at scale.</description>
+    </item>
     
     <item>
       <title>Automated UI Testing With Cypress</title>

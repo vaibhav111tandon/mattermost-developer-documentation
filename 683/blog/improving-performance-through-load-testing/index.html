@@ -9,13 +9,13 @@
 <head>
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title> Platform Repository Splitting</title>
+<title> Improving performance (and more) through load testing </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">   
 <meta http-equiv="content-language" content="en-us" />
 
 
 
-<link rel="canonical" href="../../blog/repo-split/">
+<link rel="canonical" href="https://mattermost.com/blog/improving-performance-through-load-testing/">
 
 
 <link rel="shortcut icon" type="image/png" href="../../img/favicon-32x32.png" />
@@ -158,49 +158,80 @@
             <div class="col-md-9 doc-content">
                 <div class="well well-sm">
                     <div class="blog-item__header">
-                        <div class="blog-item__title">Platform Repository Splitting<br> <small></small></div>
+                        <div class="blog-item__title">Improving performance (and more) through load testing <br> <small></small></div>
                         <div class="blog-item__info">
-                            September 4, 2017
-                            <small class="blog-item__count">262 words</small>
+                            September 7, 2020
+                            <small class="blog-item__count">942 words</small>
                         </div>
                     </div>
                     <hr>
-                    <p>A reminder that Mattermost will be separating the <code>/platform</code> repo into two repositories on September 6th, 2017:</p>
+                    <p>Have you ever wondered how many active users your application can handle at the same time? If so, you are not alone. Here at Mattermost we are building a highly concurrent messaging platform for team collaboration that needs to potentially serve up to several thousands of users simultaneously.</p>
+<p>While standard functional testing (e.g. unit tests) is critical to verify correct behaviour of your application, it&rsquo;s usually not sufficient to guarantee its performance at scale. This is where some form of performance testing can be particularly useful. Benchmarks do a good job at measuring the performance impact of single functions or limited portions of a codebase, but they cannot capture how an application is going to perform as a whole under real-world conditions. To achieve this you need <strong>load testing</strong>.</p>
+<h2 id="what-is-load-testing">What is load testing?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#what-is-load-testing"></i></a> </h2>
+<p>Load testing is the process of applying a certain amount of load to a target system in order to understand how it behaves.
+The more realistic the generated load is, the more accurate and insightful the final results will be.</p>
+<h2 id="why-does-it-matter">Why does it matter?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#why-does-it-matter"></i></a> </h2>
+<p>Load testing can be used to improve both the performance and the overall quality of your application by helping you to:</p>
 <ul>
-<li>a new repository for webapp client code, hosted at github.com/mattermost/mattermost-webapp</li>
-<li>existing repository (<code>/platform</code>) renamed to <code>/mattermost-server</code>, containing the server code.</li>
+<li>Identify performance bottlenecks in your system.</li>
+<li>Determine the overall capacity of your application.</li>
+<li>Prevent performance regressions between releases.</li>
+<li>Discover insidious bugs that passed functional testing.</li>
 </ul>
-<h3 id="why-the-change">Why the change?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#why-the-change"></i></a> </h3>
-<p>Separates PRs for client and server with better naming conventions. This is similar to <a href="https://github.com/mattermost/mattermost-mobile">React Native</a> and <a href="https://github.com/mattermost/mattermost-redux">Redux</a> repositories and helps us:</p>
+<p>As an example, these are some of non-performance related, but rather significant issues we&rsquo;ve been able to detect while load testing:</p>
 <ul>
-<li>work on one part of the system (webapp/server) without worrying about the other.</li>
-<li>review PRs more easily as the webapp/server code is logically separated.</li>
+<li>Data races</li>
+<li>Application crashes</li>
+<li>Deadlocks</li>
+<li>Memory leaks</li>
 </ul>
-<p>It&rsquo;s also the first step towards de-coupling UI versions from the server, similar to the React Native apps, and helps model the architecture we want to achieve for the server.</p>
-<h3 id="how-does-this-affect-me">How does this affect me?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#how-does-this-affect-me"></i></a> </h3>
-<p>Foremost, build process is not affected for most, with <code>make run</code> working as expected. Some webapp-related make commands will be removed from the server repo. Type <code>make help</code> to see the availalble commands. There may however be some canges to the build process, which we&rsquo;ll announce closer to September 6th.</p>
-<p>Those running private forks would need to separate their server and webapp code after 4.2 is branched, and mimic what we&rsquo;ll do when we split the platform repo. A doc with tips and best practices will be prepared to help with the transition.</p>
-<p>Finally, those with work-in-progress PRs on September 6th may need to re-submit their pull request after the separation. For instance, PRs changing the UI would need to be re-submitted to the new <code>mattermost-webapp</code> repository.</p>
-<h3 id="questions">Questions?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#questions"></i></a> </h3>
-<p>Respond to our <a href="https://forum.mattermost.org/t/mattermost-separating-platform-into-two-repositories-on-september-6th/3708">forum post</a> or to our <a href="https://community.mattermost.com/core/pl/e9d7rjq993yptryesd5ppe37sa">post in the Developers channel</a>.</p>
+<p>As you can see, running load tests can guard your software against problems of different nature. By simulating users you get a chance to realistically test a system before it hits production and potentially avoid several issues down the line.</p>
+<h2 id="how-are-we-doing-it">How are we doing it?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#how-are-we-doing-it"></i></a> </h2>
+<p>There are plenty of extremely valid load testing frameworks available; some of the best are free and open source (JMeter, Gatling, k6 to name a few). In our case, after a thorough examination, we decided to develop a custom, in-house tool. We accepted trading implementation time and complexity for improved simulation and finer control over the entire process. We&rsquo;ve recently released <a href="https://github.com/mattermost/mattermost-load-test-ng/releases/tag/v1.0.0">version 1.0</a> and we are quite happy with the choice we made. While the tool itself is not designed for general purpose use, it can still serve as a good example of how we tackled the problem of designing and developing a custom load testing engine.</p>
+<h3 id="simulating-the-load">Simulating the load&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#simulating-the-load"></i></a> </h3>
+<p>As the definition says, the core of the process is load generation. However, in order for results to be meaningful, we need the software to mimic actual user behaviour. We achieve this by leveraging data coming from real users through the use of:</p>
+<ul>
+<li>Server-side metrics (e.g. frequency of a given API call)</li>
+<li>User telemetry data (e.g. frequency of a user event/action)</li>
+</ul>
+<p>Fortunately, here at Mattermost we have a convenient advantage: we use our own application in our day to day work. This means we are able to continuously collect a considerable amount of realistic metrics from our community servers. We can then use such data to model user behaviour. To do this we create a table of user&rsquo;s actions with their respective frequencies. This action-frequency map will feed the simulation process: a simulated user will randomly pick and perform an action based on its frequency so that most common actions will be picked more often.</p>
+<p><img src="../../blog/2020-09-07-improving-performance-through-load-testing/actions-map.png" alt="actions-map"></p>
+<p>In such an example, the chance of a user switching a channel will be double the chance of creating a new post and four times that of replying to a thread.</p>
+<h3 id="getting-some-answers">Getting some answers&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#getting-some-answers"></i></a> </h3>
+<p>Now that we have a simulation in place, we come back to the original question of this blog post: how can we make our load testing software tell us how many concurrently active users our target application can support?</p>
+<p>Instead of relying on <a href="https://en.wikipedia.org/wiki/Magic_number_(programming)">magic formulas</a> which are hard to explain (and sometime defend) or on endless and error-prone manual testing, we thought of picking an idea out of <a href="https://en.wikipedia.org/wiki/Control_theory">control theory</a> that could give us both automation and precision at the same time: it&rsquo;s called a <strong>feedback loop</strong>.</p>
+<p><img src="../../blog/2020-09-07-improving-performance-through-load-testing/feedback-loop.png" alt="feedback-loop"></p>
+<p>The idea is quite simple: have the load testing engine react to what&rsquo;s happening on the target system by dynamically changing the amount of load applied in response to some event. This is achieved through the monitoring of those metrics that can best signal service degradation. Some that we make use of are:</p>
+<ul>
+<li>Request durations (average and percentiles)</li>
+<li>Request errors rate</li>
+<li>Client timeouts rate</li>
+</ul>
+<p><img src="../../blog/2020-09-07-improving-performance-through-load-testing/graph.png" alt="graph"></p>
+<p>The load testing software constantly increases the number of active users up until it detects signs of performance degradation. This happens when the metrics being monitored reach their configured thresholds (e.g. 100ms for average request duration).
+In response to such an event, the load testing engine starts to lower the number of users. This process continues for a while until an <strong>equilibrium point</strong> is reached. This value, over which performance starts to degrade, gives us a fairly good estimate on the users capacity of our target application.</p>
+<h2 id="wrapping-up">Wrapping Up&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#wrapping-up"></i></a> </h2>
+<p>The success of a software system greatly depends on its performance. In today&rsquo;s cloud-oriented world this is increasily more true. A small outage can have a serious impact on your customers and eventually affect your company&rsquo;s revenue, especially when a <a href="https://en.wikipedia.org/wiki/Service_level_agreement">service level agreement</a> is in place.</p>
+<p>Load testing is a precious tool that can help your team to improve both the overall quality and stability of your system by preventing performance issues and application bugs while improving scalability and minimizing the risk of down times.</p>
+<p>If you&rsquo;d like to know more about this particular topic or discuss performance in general, reach us in the <a href="https://community.mattermost.com/core/channels/developers-performance">Developers: Performance</a> channel.</p>
 
 
                     <hr>
                     
                     Written by
                     
-                    Joram Wilander
+                    Claudio Costa
 -
-<a href="https://community.mattermost.com/core/messages/@joram" target="_blank">
-    @joram
+<a href="https://community.mattermost.com/core/messages/@claudio.costa" target="_blank">
+    @claudio.costa
 </a>
 on
 <a href="https://community.mattermost.com/signup_user_complete" target="_blank">
     community.mattermost.com
 </a>
 and
-<a href="https://github.com/jwilander" target="_blank">
-    @jwilander
+<a href="https://github.com/streamer45" target="_blank">
+    @streamer45
 </a>
 on GitHub
 
@@ -225,8 +256,6 @@ on GitHub
                         
                         
                         
-                        
-                        <li class="blog-item__sidebar">- <a href="../../blog/improving-performance-through-load-testing/">Improving performance (and more) through load testing </a></li>
                         
                         
                         

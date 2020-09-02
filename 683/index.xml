@@ -6,7 +6,7 @@
     <description>Recent content on Mattermost Developers</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
@@ -661,7 +661,7 @@ Set up a local environment to access Kubernetes (K8s)   Make sure you have kubec
       <pubDate>Tue, 10 Jul 2018 00:00:00 -0500</pubDate>
       
       <guid>/extend/plugins/server/reference/</guid>
-      <description>This is the documentation for the Go github.com/mattermost/mattermost-server/plugin package. It can also be found on GoDoc.   The plugin package is used by Mattermost server plugins written in go. It also enables the Mattermost server to manage and interact with the running plugin environment.  Note that this package exports a large number of types prefixed with Z_. These are public only to allow their use with Hashicorp&amp;#39;s go-plugin (and net/rpc).</description>
+      <description>This is the documentation for the Go github.com/mattermost/mattermost-server/plugin package. It can also be found on GoDoc.  Run make plugin-data to generate this documentation. </description>
     </item>
     
     <item>
@@ -748,7 +748,7 @@ Android: https://play.google.com/store/apps/details?id=com.onelogin.newotp&amp;a
       <pubDate>Tue, 10 Jul 2018 00:00:00 -0500</pubDate>
       
       <guid>/extend/plugins/manifest-reference/</guid>
-      <description>The plugin manifest defines the metadata required to load and present your plugin. The manifest file should be named plugin.json or plugin.yaml and placed in the top of your plugin bundle.  Example plugin.json: { &amp;#34;id&amp;#34;: &amp;#34;com.mycompany.myplugin&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;My Plugin&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;This is my plugin&amp;#34;, &amp;#34;homepage_url&amp;#34;: &amp;#34;https://example.com&amp;#34;, &amp;#34;support_url&amp;#34;: &amp;#34;https://example.com/support&amp;#34;, &amp;#34;release_notes_url&amp;#34;: &amp;#34;https://example.com/releases/v0.0.1&amp;#34;, &amp;#34;icon_path&amp;#34;: &amp;#34;assets/logo.svg&amp;#34;, &amp;#34;version&amp;#34;: &amp;#34;0.1.0&amp;#34;, &amp;#34;min_server_version&amp;#34;: &amp;#34;5.6.0&amp;#34;, &amp;#34;server&amp;#34;: { &amp;#34;executables&amp;#34;: { &amp;#34;linux-amd64&amp;#34;: &amp;#34;server/dist/plugin-linux-amd64&amp;#34;, &amp;#34;darwin-amd64&amp;#34;: &amp;#34;server/dist/plugin-darwin-amd64&amp;#34;, &amp;#34;windows-amd64&amp;#34;: &amp;#34;server/dist/plugin-windows-amd64.exe&amp;#34; } }, &amp;#34;webapp&amp;#34;: { &amp;#34;bundle_path&amp;#34;: &amp;#34;webapp/dist/main.</description>
+      <description> Run make plugin-data to generate this documentation. </description>
     </item>
     
     <item>
@@ -1005,6 +1005,16 @@ Blog posts can cover a wide range of topics, such as:
       <description>The Sustained Engineering Team (SET) is responsible for improving and maintaining quality.
 Team Members SET is a rotating team that is comprised of engineers from the different feature teams. The rotation is on a two week cycle. Who is currently on SET can be seen in the header of the ~Sustained Engineering channel.
 Feature teams will commit a total of 4 engineers plus a lead to SET for each rotation. While on SET, that engineer should attend their feature team&amp;rsquo;s sprint planning but should not be assigned any work from their feature team.</description>
+    </item>
+    
+    <item>
+      <title>Improving performance (and more) through load testing </title>
+      <link>/blog/improving-performance-through-load-testing/</link>
+      <pubDate>Mon, 07 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/improving-performance-through-load-testing/</guid>
+      <description>Have you ever wondered how many active users your application can handle at the same time? If so, you are not alone. Here at Mattermost we are building a highly concurrent messaging platform for team collaboration that needs to potentially serve up to several thousands of users simultaneously.
+While standard functional testing (e.g. unit tests) is critical to verify correct behaviour of your application, it&amp;rsquo;s usually not sufficient to guarantee its performance at scale.</description>
     </item>
     
     <item>

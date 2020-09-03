@@ -161,7 +161,7 @@
                         <div class="blog-item__title">Improving performance (and more) through load testing<br> <small></small></div>
                         <div class="blog-item__info">
                             September 7, 2020
-                            <small class="blog-item__count">942 words</small>
+                            <small class="blog-item__count">1029 words</small>
                         </div>
                     </div>
                     <hr>
@@ -187,9 +187,9 @@ The more realistic the generated load is, the more accurate and insightful the f
 </ul>
 <p>As you can see, running load tests can guard your software against problems of different nature. By simulating users you get a chance to realistically test a system before it hits production and potentially avoid several issues down the line.</p>
 <h2 id="how-are-we-doing-it">How are we doing it?&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#how-are-we-doing-it"></i></a> </h2>
-<p>There are plenty of extremely valid load testing frameworks available; some of the best are free and open source (JMeter, Gatling, k6 to name a few). In our case, after a thorough examination, we decided to develop a custom, in-house tool. We accepted trading implementation time and complexity for improved simulation and finer control over the entire process. We&rsquo;ve recently released <a href="https://github.com/mattermost/mattermost-load-test-ng/releases/tag/v1.0.0">version 1.0</a> and we&rsquo;re quite happy with the choice we made. While the tool itself is not designed for general purpose use, it can still serve as a good example of how we tackled the problem of designing and developing a custom load testing engine.</p>
+<p>There are plenty of high quality load testing frameworks available; some of the best are free and open source (<a href="https://jmeter.apache.org/">JMeter</a>, <a href="https://gatling.io/">Gatling</a>, <a href="https://k6.io/">k6</a> to name a few). In our case, after a thorough examination, we decided to develop a custom, in-house tool. We accepted trading implementation time and complexity for improved simulation and finer control over the entire process. We&rsquo;ve recently released <a href="https://github.com/mattermost/mattermost-load-test-ng/releases/tag/v1.0.0">version 1.0</a> and we&rsquo;re quite happy with the choice we made. While the tool itself is not designed for general purpose use, it can still serve as a good example of how we tackled the problem of designing and developing a custom load testing engine.</p>
 <h3 id="simulating-the-load">Simulating the load&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#simulating-the-load"></i></a> </h3>
-<p>As the definition says, the core of the process is load generation. However, in order for results to be meaningful, we need the software to mimic actual user behavior. We achieve this by leveraging data coming from real users through the use of:</p>
+<p>As the definition says, the core of the process is load generation. It&rsquo;s important to note that, similarly to what happens in other tools of this kind, the load will be generated at the HTTP (and Websocket) level through a series of API calls. This means that, from a performance perspective, we&rsquo;re going to be testing everything in between the user (client) and the physical machine running our target application (server). Furthermore, in order for results to be meaningful, we need the software to mimic actual user behavior. We achieve this by leveraging data coming from real users through the use of:</p>
 <ul>
 <li>Server-side metrics (e.g. frequency of a given API call)</li>
 <li>User telemetry data (e.g. frequency of a user event/action)</li>
@@ -211,9 +211,10 @@ The more realistic the generated load is, the more accurate and insightful the f
 <p>The load testing software constantly increases the number of active users up until it detects signs of performance degradation. This happens when the metrics being monitored reach their configured thresholds (e.g. 100ms for average request duration).
 In response to such an event, the load testing engine starts to lower the number of users. This process continues for a while until an <strong>equilibrium point</strong> is reached. This value, over which performance starts to degrade, gives us a fairly good estimate on the user capacity our target application can comfortably support.</p>
 <h2 id="wrapping-up">Wrapping up&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#wrapping-up"></i></a> </h2>
-<p>The success of a software system greatly depends on its performance. In today&rsquo;s cloud-oriented world this is increasily more true. A small outage can have a serious impact on your customers and eventually affect your company&rsquo;s revenue, especially when a <a href="https://en.wikipedia.org/wiki/Service_level_agreement">service level agreement</a> is in place.</p>
+<p>The success of a software system greatly depends on its performance, especially in today&rsquo;s cloud-oriented world. A small outage can have a serious impact on your customers and eventually affect your company&rsquo;s revenue, especially when a <a href="https://en.wikipedia.org/wiki/Service_level_agreement">service level agreement</a> is in place.</p>
 <p>Load testing is a precious tool that can help your team to improve both the overall quality and stability of your system by preventing performance issues and application bugs while improving scalability and minimizing the risk of down times.</p>
-<p>If you&rsquo;d like to know more about this particular topic or discuss performance in general, you can reach us in the <a href="https://community.mattermost.com/core/channels/developers-performance">Developers: Performance</a> channel.</p>
+<p>Stay tuned for a follow-up article including an in depth technical discussion on the internals of our custom engine plus a full section on how to interpret and leverage load testing results.
+If you&rsquo;d like to know more about this particular topic or discuss performance in general, you can reach us in the <a href="https://community.mattermost.com/core/channels/developers-performance">Developers: Performance</a> channel.</p>
 
 
                     <hr>

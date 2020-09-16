@@ -65,7 +65,7 @@ Below is a brief guide on how to do component testing:</description>
       <guid>/contribute/webapp/end-to-end-tests/</guid>
       <description>This page describes how to run End-to-End (E2E) testing and to build tests for a section or page of the Mattermost web application. Under the hood, we are using Cypress which is &amp;ldquo;fast, easy and reliable testing for anything that runs in a browser.&amp;rdquo;
 Not familiar with Cypress? Here is some documentation that will help you get started:
- Developer Guide API Reference  Quick Overview on How to Run E2E Testing On Your Local Development Machine  Run a local server instance by initiating make run to the mattermost-server folder.</description>
+ Developer Guide API Reference  Quick Overview on How to Run E2E Testing On Your Local Development Machine  Launch a local Mattermost instance by running make run in the mattermost-server directory.</description>
     </item>
     
     <item>

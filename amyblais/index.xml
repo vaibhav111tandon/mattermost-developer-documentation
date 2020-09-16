@@ -102,6 +102,15 @@ Customization steps With that in mind, customizing and deploying your Mattermost
     </item>
     
     <item>
+      <title>Help Wanted Tickets</title>
+      <link>/contribute/plugins/help-wanted-tickets/</link>
+      <pubDate>Mon, 19 Mar 2018 12:01:23 -0400</pubDate>
+      
+      <guid>/contribute/plugins/help-wanted-tickets/</guid>
+      <description>Each plugin&amp;rsquo;s Help Wanted tickets are located in the respective plugin&amp;rsquo;s GitHub repository. In order to browse all of the open tickets, see this issue in the server repository with links to specific plugin repositories, and queries for Help Wanted tickets in each repository. The &amp;ldquo;All Plugins Up for Grabs&amp;rdquo; link there is useful to browse all repositories at once.</description>
+    </item>
+    
+    <item>
       <title>Bump Version Number</title>
       <link>/internal/mobile-build-process/bump-version-number/</link>
       <pubDate>Tue, 07 Nov 2017 14:28:35 -0500</pubDate>
@@ -163,6 +172,17 @@ I want to know when someone says something Tracking what gets posted into a chan
     
     <item>
       <title>Developer Setup</title>
+      <link>/extend/plugins/developer-setup/</link>
+      <pubDate>Sat, 11 Jul 2020 23:00:00 -0400</pubDate>
+      
+      <guid>/extend/plugins/developer-setup/</guid>
+      <description>Once you have your server and webapp set up, you can start developing on plugins.
+For developing on Mattermost-managed plugins, each plugin&amp;rsquo;s setup instructions can be found in the plugin repository&amp;rsquo;s README. Some plugins do not have external dependencies and require little to no setup, like the Todo Plugin while others require an external service to be set up, like the Jira Plugin and GitHub Plugin.
+Set up your environment to deploy plugins Deploying with Local Mode Note: Deploying with Local Mode will only work for plugins that have been updated with the functionality from the Plugin Starter Template.</description>
+    </item>
+    
+    <item>
+      <title>Developer Setup</title>
       <link>/contribute/server/developer-setup/</link>
       <pubDate>Sat, 01 Feb 2020 19:50:32 -0400</pubDate>
       
@@ -192,6 +212,15 @@ Note: MM-9791 introduced using docker-compose to manage containers.</description
       <description>Running and Building the Apps Use the Makefile commands to run and build the apps. See these instructions for developing on a real device.
 Adding New Dependencies to the Project If you need to add a new dependency to the project, it is important to add them in the right way. Instructions for adding different types of dependencies are described below.
 JavaScript Only If you need to add a new JavaScript dependency that is not related to React Native, use npm, not yarn.</description>
+    </item>
+    
+    <item>
+      <title>Developer Setup</title>
+      <link>/contribute/plugins/developer-setup/</link>
+      <pubDate>Mon, 19 Mar 2018 12:01:23 -0400</pubDate>
+      
+      <guid>/contribute/plugins/developer-setup/</guid>
+      <description>Please see the plugin developer setup and developer workflow pages for information on the plugin development environment.</description>
     </item>
     
     <item>
@@ -250,6 +279,15 @@ brew install node@10 libpng   For other platforms, install Node.js v10 from http
       <description>Push notifications on iOS are managed and dispatched using Apple&amp;rsquo;s Push Notification Service. You must have a Paid Apple Developer account to create certificates needed to send notifications using this service.
   Generate a Certificate from Keychain Access
   Launch the Keychain Access application in your Mac and select KeyChain Access -\Certificate Assistant -\Request a Certificate From a Certificate Authority&amp;hellip;   Enter your email address in User Email Address and check the &amp;ldquo;Save to disk&amp;rdquo; option, then click Continue   Save the certificate request     Log in to Apple developer account and click Certificates, Identifiers and Profiles   Select iOS from the dropdown   Select App IDs from the side menu and look for the Bundle Identifier you are using for the Mattermost app   Select the App ID and click Edit   Scroll down to the Push Notification Section and click Create a Production SSL Certificate   In the About Creating a Certificate Signing Request (CSR) screen click Continue /img/ios_csr.</description>
+    </item>
+    
+    <item>
+      <title>Developer Workflow</title>
+      <link>/extend/plugins/developer-workflow/</link>
+      <pubDate>Sat, 11 Jul 2020 23:00:00 -0400</pubDate>
+      
+      <guid>/extend/plugins/developer-workflow/</guid>
+      <description>Common make commands for working with plugins  make dist - Compile the plugin into a g-zipped file, ready to upload to a Mattermost server. The file is saved in the plugin repo&amp;rsquo;s dist folder. make deploy - Compiles the plugin using the make dist command, then automatically deploys the plugin to the Mattermost server make watch - Uses webpack&amp;rsquo;s watch feature to re-compile and deploy the webapp portion of your plugin on any change to the webapp/src folder make test - Runs the plugin&amp;rsquo;s server tests and webapp tests make check-style - Runs linting checks on the plugin&amp;rsquo;s server and webapp folders make enable - Enables the plugin on the Mattermost server make disable - Disables the plugin on the Mattermost server make reset - Disables and re-enables the plugin on the Mattermost server make debug-plugin - Starts a delve process and attaches it to your running plugin  You can run the development build of the plugin by setting the environment variable MM_DEBUG=1, or prefixing the variable at the beginning of the make command.</description>
     </item>
     
     <item>
@@ -540,7 +578,7 @@ The Mattermost Push Notification Service version 5.8+ uses FCM to send Push noti
       <guid>/contribute/webapp/end-to-end-tests/</guid>
       <description>This page describes how to run End-to-End (E2E) testing and to build tests for a section or page of the Mattermost web application. Under the hood, we are using Cypress which is &amp;ldquo;fast, easy and reliable testing for anything that runs in a browser.&amp;rdquo;
 Not familiar with Cypress? Here is some documentation that will help you get started:
- Developer Guide API Reference  Quick Overview on How to Run E2E Testing On Your Local Development Machine  Run a local server instance by initiating make run to the mattermost-server folder.</description>
+ Developer Guide API Reference  Quick Overview on How to Run E2E Testing On Your Local Development Machine  Launch a local Mattermost instance by running make run in the mattermost-server directory.</description>
     </item>
     
     <item>
@@ -872,6 +910,17 @@ Requirements for Adding A Community Plugin to the Marketplace Every community pl
       <guid>/extend/plugins/best-practices/</guid>
       <description>See here for server-specific best practices for plugins. Webapp-specific best practices are incoming.
 How can a plugin enable its configuration through the System Console? Once a plugin is installed, Administrators have access to the plugin&amp;rsquo;s configuration page in the System Console &amp;gt; Plugins section. The configurable settings must first be defined in the plugin&amp;rsquo;s manifest setting schema. The web app supports several basic pre-defined settings type, e.g. bool and dropdown, for which the corresponding UI components are provided in order to complete configuration in the System Console.</description>
+    </item>
+    
+    <item>
+      <title>Source Available License</title>
+      <link>/extend/plugins/source-available-license/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/extend/plugins/source-available-license/</guid>
+      <description>Some plugins authored by Mattermost are licensed under the Mattermost Source Available License. This document outlines how to apply the license in various situations.
+How do I apply the license to an Enterprise-only plugin? An Enterprise-only plugin is a plugin that requires a valid Mattermost Enterprise E20 license. It is not designed to be used with Team Edition or any other Enterprise license.
+ Add the LICENSE file to the root of your plugin repository.</description>
     </item>
     
     <item>
@@ -1352,12 +1401,12 @@ How can plugins make sure http requests are authentic? Plugins can implement the
     </item>
     
     <item>
-      <title>Design Best Practices</title>
+      <title>Best Practices</title>
       <link>/extend/plugins/webapp/best-practices/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/extend/plugins/webapp/best-practices/</guid>
-      <description>Actions that apply to specific Channels  Recommendation: Have your plugin register the actions to the channel header. This makes it quickly accessible for users and the actions apply on the channel they&amp;rsquo;re viewing. Example: Zoom meeting posts to a channel  You can additionally register a slash command on the server-side to take channel-specific actions.
+      <description>Design Best Practices Actions that apply to specific Channels  Recommendation: Have your plugin register the actions to the channel header. This makes it quickly accessible for users and the actions apply on the channel they&amp;rsquo;re viewing. Example: Zoom meeting posts to a channel  You can additionally register a slash command on the server-side to take channel-specific actions.
  Example: Jira project actions  Actions that apply to specific messages  Recommendation: Have your plugin register a post dropdown menu component with some text, icon and an action function.</description>
     </item>
     

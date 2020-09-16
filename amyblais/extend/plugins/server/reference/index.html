@@ -139,7 +139,7 @@
 
 <div class='notification-bar sticky-top'>
     <div class="notification-bar__content">
-        <a href="#" class="notification-bar__close">
+        <a class="notification-bar__close">
             <span aria-hidden="true">×</span>
         </a>
         <a href="https://mattermost.com/careers">
@@ -307,6 +307,46 @@
 
                         
                         
+
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                            
+                                <a href="../../../../extend/plugins/developer-setup/"> Developer Setup</a></span>
+                            
+                        </span>
+                        <ul class="sub-menu" >
+                            
+                        </ul>
+                    
+                        
+                        
+
+                        
+                        
+
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                            
+                                <a href="../../../../extend/plugins/developer-workflow/"> Developer Workflow</a></span>
+                            
+                        </span>
+                        <ul class="sub-menu" >
+                            
+                        </ul>
+                    
+                        
+                        
+
+                        
+                        
                             
                         
 
@@ -358,7 +398,7 @@
                             
                                 <a class="item " href="../../../../extend/plugins/webapp/actions/">Redux Actions</a>
                             
-                                <a class="item " href="../../../../extend/plugins/webapp/best-practices/">Design Best Practices</a>
+                                <a class="item " href="../../../../extend/plugins/webapp/best-practices/">Best Practices</a>
                             
                         </ul>
                     
@@ -515,6 +555,26 @@
                         <span class="item ">
                             <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
                             
+                                <a href="../../../../extend/plugins/source-available-license/"> Source Available License</a></span>
+                            
+                        </span>
+                        <ul class="sub-menu" >
+                            
+                        </ul>
+                    
+                        
+                        
+
+                        
+                        
+
+                        
+                            
+                        
+
+                        <span class="item ">
+                            <i class="sub-menu__toggle fa fa-plus-square-o" aria-hidden="true" style="display: none"></i>
+                            
                                 <a href="../../../../extend/plugins/helpers/"> Plugin Helpers</a></span>
                             
                         </span>
@@ -616,7 +676,17 @@ directly.
         
     
         
+    
+        
             <li><a href="#API.GetSession">GetSession(sessionId string) (*model.Session, *model.AppError)</a></li>
+        
+    
+        
+    
+        
+    
+        
+    
         
     
         
@@ -899,12 +969,24 @@ directly.
             <li><a href="#API.PluginHTTP">PluginHTTP(request *http.Request) *http.Response</a></li>
         
     
+        
+    
     
     
     
     <li>
         Bot
         <ul>
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
             
                 
             
@@ -1202,6 +1284,8 @@ directly.
             
                 
             
+                
+            
         </ul>
     </li>
     
@@ -1209,6 +1293,14 @@ directly.
     <li>
         Channel
         <ul>
+            
+                
+            
+                
+            
+                
+            
+                
             
                 
             
@@ -1356,6 +1448,8 @@ directly.
             
                 
                     <li><a href="#API.SearchChannels">SearchChannels(teamId string, term string) ([]*model.Channel, *model.AppError)</a></li>
+                
+            
                 
             
                 
@@ -1544,6 +1638,8 @@ directly.
             
                 
             
+                
+            
         </ul>
     </li>
     
@@ -1560,6 +1656,20 @@ directly.
             
                 
                     <li><a href="#API.UnregisterCommand">UnregisterCommand(teamId, trigger string) error</a></li>
+                
+            
+                
+                    <li><a href="#API.ExecuteSlashCommand">ExecuteSlashCommand(commandArgs *model.CommandArgs) (*model.CommandResponse, error)</a></li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
                 
             
                 
@@ -1851,6 +1961,8 @@ directly.
                 
             
                 
+            
+                
                     <li><a href="#API.GetConfig">GetConfig() *model.Config</a></li>
                 
             
@@ -1860,6 +1972,16 @@ directly.
             
                 
                     <li><a href="#API.SaveConfig">SaveConfig(config *model.Config) *model.AppError</a></li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
                 
             
                 
@@ -2321,6 +2443,16 @@ directly.
                 
             
                 
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
                     <li><a href="#API.GetEmojiList">GetEmojiList(sortBy string, page, perPage int) ([]*model.Emoji, *model.AppError)</a></li>
                 
             
@@ -2420,6 +2552,8 @@ directly.
             
                 
             
+                
+            
         </ul>
     </li>
     
@@ -2427,6 +2561,16 @@ directly.
     <li>
         File
         <ul>
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
             
                 
             
@@ -2720,6 +2864,8 @@ directly.
             
                 
             
+                
+            
         </ul>
     </li>
     
@@ -2727,6 +2873,16 @@ directly.
     <li>
         Group
         <ul>
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
             
                 
             
@@ -2880,6 +3036,8 @@ directly.
             
                 
                     <li><a href="#API.GetGroupsForUser">GetGroupsForUser(userId string) ([]*model.Group, *model.AppError)</a></li>
+                
+            
                 
             
                 
@@ -3243,6 +3401,16 @@ directly.
                 
             
                 
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
                     <li><a href="#API.KVSet">KVSet(key string, value []byte) *model.AppError</a></li>
                 
             
@@ -3274,6 +3442,8 @@ directly.
             
                 
                     <li><a href="#API.KVList">KVList(page, perPage int) ([]string, *model.AppError)</a></li>
+                
+            
                 
             
                 
@@ -3571,6 +3741,16 @@ directly.
                 
             
                 
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
                     <li><a href="#API.LogDebug">LogDebug(msg string, keyValuePairs ...interface{}) </a></li>
                 
             
@@ -3584,6 +3764,8 @@ directly.
             
                 
                     <li><a href="#API.LogWarn">LogWarn(msg string, keyValuePairs ...interface{}) </a></li>
+                
+            
                 
             
                 
@@ -3633,6 +3815,8 @@ directly.
                 
             
                 
+            
+                
                     <li><a href="#API.GetPluginConfig">GetPluginConfig() map[string]interface{}</a></li>
                 
             
@@ -3642,6 +3826,14 @@ directly.
             
                 
                     <li><a href="#API.GetBundlePath">GetBundlePath() (string, error)</a></li>
+                
+            
+                
+            
+                
+            
+                
+            
                 
             
                 
@@ -3914,6 +4106,8 @@ directly.
             
                 
             
+                
+            
         </ul>
     </li>
     
@@ -4047,7 +4241,19 @@ directly.
                 
             
                 
+            
+                
+            
+                
+            
+                
+            
+                
                     <li><a href="#API.SearchPostsInTeam">SearchPostsInTeam(teamId string, paramsList []*model.SearchParams) ([]*model.Post, *model.AppError)</a></li>
+                
+            
+                
+                    <li><a href="#API.SearchPostsInTeamForUser">SearchPostsInTeamForUser(teamId string, userId string, searchParams model.SearchParameter) (*model.PostSearchResults, *model.AppError)</a></li>
                 
             
                 
@@ -4232,6 +4438,312 @@ directly.
             
                 
             
+                
+            
+        </ul>
+    </li>
+    
+    
+    <li>
+        Preference
+        <ul>
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                    <li><a href="#API.GetPreferencesForUser">GetPreferencesForUser(userId string) ([]model.Preference, *model.AppError)</a></li>
+                
+            
+                
+                    <li><a href="#API.UpdatePreferencesForUser">UpdatePreferencesForUser(userId string, preferences []model.Preference) *model.AppError</a></li>
+                
+            
+                
+                    <li><a href="#API.DeletePreferencesForUser">DeletePreferencesForUser(userId string, preferences []model.Preference) *model.AppError</a></li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
         </ul>
     </li>
     
@@ -4239,6 +4751,8 @@ directly.
     <li>
         Server
         <ul>
+            
+                
             
                 
             
@@ -4274,6 +4788,16 @@ directly.
             
                 
                     <li><a href="#API.GetDiagnosticId">GetDiagnosticId() string</a></li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
                 
             
                 
@@ -4577,7 +5101,15 @@ directly.
                 
             
                 
+            
+                
                     <li><a href="#API.GetUsersInTeam">GetUsersInTeam(teamId string, page int, perPage int) ([]*model.User, *model.AppError)</a></li>
+                
+            
+                
+            
+                
+            
                 
             
                 
@@ -4763,6 +5295,8 @@ directly.
                 
             
                 
+            
+                
                     <li><a href="#API.GetTeamStats">GetTeamStats(teamId string) (*model.TeamStats, *model.AppError)</a></li>
                 
             
@@ -4866,6 +5400,8 @@ directly.
             
                 
             
+                
+            
         </ul>
     </li>
     
@@ -4873,6 +5409,8 @@ directly.
     <li>
         User
         <ul>
+            
+                
             
                 
             
@@ -4932,6 +5470,18 @@ directly.
             
                 
                     <li><a href="#API.GetUsersInTeam">GetUsersInTeam(teamId string, page int, perPage int) ([]*model.User, *model.AppError)</a></li>
+                
+            
+                
+                    <li><a href="#API.GetPreferencesForUser">GetPreferencesForUser(userId string) ([]model.Preference, *model.AppError)</a></li>
+                
+            
+                
+                    <li><a href="#API.UpdatePreferencesForUser">UpdatePreferencesForUser(userId string, preferences []model.Preference) *model.AppError</a></li>
+                
+            
+                
+                    <li><a href="#API.DeletePreferencesForUser">DeletePreferencesForUser(userId string, preferences []model.Preference) *model.AppError</a></li>
                 
             
                 
@@ -5054,6 +5604,8 @@ directly.
             
                 
                     <li><a href="#API.SearchUsers">SearchUsers(search *model.UserSearch) ([]*model.User, *model.AppError)</a></li>
+                
+            
                 
             
                 
@@ -5240,6 +5792,10 @@ directly.
             
                 
             
+                
+            
+                
+                    <li><a href="#API.PublishUserTyping">PublishUserTyping(userId, channelId, parentId string) *model.AppError</a></li>
                 
             
         </ul>
@@ -5463,6 +6019,21 @@ UnregisterCommand unregisters a command previously registered via RegisterComman
 <p>
 @tag Command
 Minimum server version: 5.2
+</p>
+</p>
+        </div>
+    
+        <div>
+            <h3 id="API.ExecuteSlashCommand">(API) ExecuteSlashCommand&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#API.ExecuteSlashCommand"></i></a> </h3>
+            <p>
+    <pre><code>ExecuteSlashCommand(commandArgs *<a href="https://pkg.go.dev/github.com/mattermost/mattermost-server/v5/model">model</a>.<a href="https://pkg.go.dev/github.com/mattermost/mattermost-server/v5/model#CommandArgs">CommandArgs</a>) (*<a href="https://pkg.go.dev/github.com/mattermost/mattermost-server/v5/model">model</a>.<a href="https://pkg.go.dev/github.com/mattermost/mattermost-server/v5/model#CommandResponse">CommandResponse</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>
+</p>
+            <p><p>
+ExecuteSlashCommand executes a slash command with the given parameters.
+</p>
+<p>
+@tag Command
+Minimum server version: 5.26
 </p>
 </p>
         </div>
@@ -5749,6 +6320,54 @@ GetUsersInTeam gets users in team.
 @tag User
 @tag Team
 Minimum server version: 5.6
+</p>
+</p>
+        </div>
+    
+        <div>
+            <h3 id="API.GetPreferencesForUser">(API) GetPreferencesForUser&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#API.GetPreferencesForUser"></i></a> </h3>
+            <p>
+    <pre><code>GetPreferencesForUser(userId <a href="https://pkg.go.dev/builtin#string">string</a>) ([]<a href="https://pkg.go.dev/github.com/mattermost/mattermost-server/v5/model">model</a>.<a href="https://pkg.go.dev/github.com/mattermost/mattermost-server/v5/model#Preference">Preference</a>, *<a href="https://pkg.go.dev/github.com/mattermost/mattermost-server/v5/model">model</a>.<a href="https://pkg.go.dev/github.com/mattermost/mattermost-server/v5/model#AppError">AppError</a>)</code></pre>
+</p>
+            <p><p>
+GetPreferencesForUser gets a user&#39;s preferences.
+</p>
+<p>
+@tag User
+@tag Preference
+Minimum server version: 5.26
+</p>
+</p>
+        </div>
+    
+        <div>
+            <h3 id="API.UpdatePreferencesForUser">(API) UpdatePreferencesForUser&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#API.UpdatePreferencesForUser"></i></a> </h3>
+            <p>
+    <pre><code>UpdatePreferencesForUser(userId <a href="https://pkg.go.dev/builtin#string">string</a>, preferences []<a href="https://pkg.go.dev/github.com/mattermost/mattermost-server/v5/model">model</a>.<a href="https://pkg.go.dev/github.com/mattermost/mattermost-server/v5/model#Preference">Preference</a>) *<a href="https://pkg.go.dev/github.com/mattermost/mattermost-server/v5/model">model</a>.<a href="https://pkg.go.dev/github.com/mattermost/mattermost-server/v5/model#AppError">AppError</a></code></pre>
+</p>
+            <p><p>
+UpdatePreferencesForUser updates a user&#39;s preferences.
+</p>
+<p>
+@tag User
+@tag Preference
+Minimum server version: 5.26
+</p>
+</p>
+        </div>
+    
+        <div>
+            <h3 id="API.DeletePreferencesForUser">(API) DeletePreferencesForUser&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#API.DeletePreferencesForUser"></i></a> </h3>
+            <p>
+    <pre><code>DeletePreferencesForUser(userId <a href="https://pkg.go.dev/builtin#string">string</a>, preferences []<a href="https://pkg.go.dev/github.com/mattermost/mattermost-server/v5/model">model</a>.<a href="https://pkg.go.dev/github.com/mattermost/mattermost-server/v5/model#Preference">Preference</a>) *<a href="https://pkg.go.dev/github.com/mattermost/mattermost-server/v5/model">model</a>.<a href="https://pkg.go.dev/github.com/mattermost/mattermost-server/v5/model#AppError">AppError</a></code></pre>
+</p>
+            <p><p>
+DeletePreferencesForUser deletes a user&#39;s preferences.
+</p>
+<p>
+@tag User
+@tag Preference
+Minimum server version: 5.26
 </p>
 </p>
         </div>
@@ -6389,6 +7008,20 @@ SearchPostsInTeam returns a list of posts in a specific team that match the give
 @tag Post
 @tag Team
 Minimum server version: 5.10
+</p>
+</p>
+        </div>
+    
+        <div>
+            <h3 id="API.SearchPostsInTeamForUser">(API) SearchPostsInTeamForUser&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#API.SearchPostsInTeamForUser"></i></a> </h3>
+            <p>
+    <pre><code>SearchPostsInTeamForUser(teamId <a href="https://pkg.go.dev/builtin#string">string</a>, userId <a href="https://pkg.go.dev/builtin#string">string</a>, searchParams <a href="https://pkg.go.dev/github.com/mattermost/mattermost-server/v5/model">model</a>.<a href="https://pkg.go.dev/github.com/mattermost/mattermost-server/v5/model#SearchParameter">SearchParameter</a>) (*<a href="https://pkg.go.dev/github.com/mattermost/mattermost-server/v5/model">model</a>.<a href="https://pkg.go.dev/github.com/mattermost/mattermost-server/v5/model#PostSearchResults">PostSearchResults</a>, *<a href="https://pkg.go.dev/github.com/mattermost/mattermost-server/v5/model">model</a>.<a href="https://pkg.go.dev/github.com/mattermost/mattermost-server/v5/model#AppError">AppError</a>)</code></pre>
+</p>
+            <p><p>
+SearchPostsInTeamForUser returns a list of posts by team and user that match the given
+search parameters.
+@tag Post
+Minimum server version: 5.26
 </p>
 </p>
         </div>
@@ -7581,6 +8214,22 @@ PluginHTTP allows inter-plugin requests to plugin APIs.
 </p>
 <p>
 Minimum server version: 5.18
+</p>
+</p>
+        </div>
+    
+        <div>
+            <h3 id="API.PublishUserTyping">(API) PublishUserTyping&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#API.PublishUserTyping"></i></a> </h3>
+            <p>
+    <pre><code>PublishUserTyping(userId, channelId, parentId <a href="https://pkg.go.dev/builtin#string">string</a>) *<a href="https://pkg.go.dev/github.com/mattermost/mattermost-server/v5/model">model</a>.<a href="https://pkg.go.dev/github.com/mattermost/mattermost-server/v5/model#AppError">AppError</a></code></pre>
+</p>
+            <p><p>
+PublishUserTyping publishes a user is typing WebSocket event.
+The parentId parameter may be an empty string, the other parameters are required.
+</p>
+<p>
+@tag User
+Minimum server version: 5.26
 </p>
 </p>
         </div>

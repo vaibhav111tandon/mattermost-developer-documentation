@@ -24,6 +24,26 @@ Manifest The plugin manifest provides required metadata about the plugin, such a
     </item>
     
     <item>
+      <title>Developer Setup</title>
+      <link>/extend/plugins/developer-setup/</link>
+      <pubDate>Sat, 11 Jul 2020 23:00:00 -0400</pubDate>
+      
+      <guid>/extend/plugins/developer-setup/</guid>
+      <description>Once you have your server and webapp set up, you can start developing on plugins.
+For developing on Mattermost-managed plugins, each plugin&amp;rsquo;s setup instructions can be found in the plugin repository&amp;rsquo;s README. Some plugins do not have external dependencies and require little to no setup, like the Todo Plugin while others require an external service to be set up, like the Jira Plugin and GitHub Plugin.
+Set up your environment to deploy plugins Deploying with Local Mode Note: Deploying with Local Mode will only work for plugins that have been updated with the functionality from the Plugin Starter Template.</description>
+    </item>
+    
+    <item>
+      <title>Developer Workflow</title>
+      <link>/extend/plugins/developer-workflow/</link>
+      <pubDate>Sat, 11 Jul 2020 23:00:00 -0400</pubDate>
+      
+      <guid>/extend/plugins/developer-workflow/</guid>
+      <description>Common make commands for working with plugins  make dist - Compile the plugin into a g-zipped file, ready to upload to a Mattermost server. The file is saved in the plugin repo&amp;rsquo;s dist folder. make deploy - Compiles the plugin using the make dist command, then automatically deploys the plugin to the Mattermost server make watch - Uses webpack&amp;rsquo;s watch feature to re-compile and deploy the webapp portion of your plugin on any change to the webapp/src folder make test - Runs the plugin&amp;rsquo;s server tests and webapp tests make check-style - Runs linting checks on the plugin&amp;rsquo;s server and webapp folders make enable - Enables the plugin on the Mattermost server make disable - Disables the plugin on the Mattermost server make reset - Disables and re-enables the plugin on the Mattermost server make debug-plugin - Starts a delve process and attaches it to your running plugin  You can run the development build of the plugin by setting the environment variable MM_DEBUG=1, or prefixing the variable at the beginning of the make command.</description>
+    </item>
+    
+    <item>
       <title>Manifest Reference</title>
       <link>/extend/plugins/manifest-reference/</link>
       <pubDate>Tue, 10 Jul 2018 00:00:00 -0500</pubDate>
@@ -82,6 +102,17 @@ Requirements for Adding A Community Plugin to the Marketplace Every community pl
       <guid>/extend/plugins/best-practices/</guid>
       <description>See here for server-specific best practices for plugins. Webapp-specific best practices are incoming.
 How can a plugin enable its configuration through the System Console? Once a plugin is installed, Administrators have access to the plugin&amp;rsquo;s configuration page in the System Console &amp;gt; Plugins section. The configurable settings must first be defined in the plugin&amp;rsquo;s manifest setting schema. The web app supports several basic pre-defined settings type, e.g. bool and dropdown, for which the corresponding UI components are provided in order to complete configuration in the System Console.</description>
+    </item>
+    
+    <item>
+      <title>Source Available License</title>
+      <link>/extend/plugins/source-available-license/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/extend/plugins/source-available-license/</guid>
+      <description>Some plugins authored by Mattermost are licensed under the Mattermost Source Available License. This document outlines how to apply the license in various situations.
+How do I apply the license to an Enterprise-only plugin? An Enterprise-only plugin is a plugin that requires a valid Mattermost Enterprise E20 license. It is not designed to be used with Team Edition or any other Enterprise license.
+ Add the LICENSE file to the root of your plugin repository.</description>
     </item>
     
     <item>

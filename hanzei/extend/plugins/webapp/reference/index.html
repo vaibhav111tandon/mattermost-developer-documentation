@@ -139,7 +139,7 @@
 
 <div class='notification-bar sticky-top'>
     <div class="notification-bar__content">
-        <a href="#" class="notification-bar__close">
+        <a class="notification-bar__close">
             <span aria-hidden="true">×</span>
         </a>
         <a href="https://mattermost.com/careers">
@@ -701,6 +701,8 @@
         
         <li><a href="#registerChannelHeaderButtonAction">registerChannelHeaderButtonAction(icon, action, dropdownText, tooltipText)</a></li>
         
+        <li><a href="#registerCallButtonAction">registerCallButtonAction(icon, action, dropdownText, tooltipText)</a></li>
+        
         <li><a href="#registerPostTypeComponent">registerPostTypeComponent(type, component)</a></li>
         
         <li><a href="#registerPostCardTypeComponent">registerPostCardTypeComponent(type, component)</a></li>
@@ -854,6 +856,24 @@ registerLinkTooltipComponent(component)</code></pre>
     * - tooltip_text - string shown for tooltip appear on hover
 */
 registerChannelHeaderButtonAction(icon, action, dropdownText, tooltipText)</code></pre>
+</p>
+        </div>
+    
+        <div>
+            <h5 id="registerCallButtonAction">registerCallButtonAction&nbsp;<a class="hanchor fa fa-link" ariaLabel="Anchor" href="#registerCallButtonAction"></i></a> </h3>
+            <p>
+    <pre><code>/**
+    * Add a &#34;call button&#34;&#34; next to the attach file button. If there are more than one button registered by any
+    * plugin, a dropdown menu is created to contain all the call plugin buttons.
+    * Accepts the following:
+    * - icon - React element to use as the button&#39;s icon
+    * - action - a function called when the button is clicked, passed the channel and channel member as arguments
+    * - dropdown_text - string or React element shown for the dropdown button description
+    * - tooltip_text - string shown for tooltip appear on hover
+    * Returns an unique identifier
+    * Minimum required version: 5.28
+*/
+registerCallButtonAction(icon, action, dropdownText, tooltipText)</code></pre>
 </p>
         </div>
     

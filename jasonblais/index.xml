@@ -6,7 +6,7 @@
     <description>Recent content on Mattermost Developers</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2020 09:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
@@ -171,6 +171,16 @@ I want to know when someone says something Tracking what gets posted into a chan
     </item>
     
     <item>
+      <title>Folder and File Structure</title>
+      <link>/contribute/mobile/e2e/file-structure/</link>
+      <pubDate>Wed, 02 Sep 2020 09:00:00 +0000</pubDate>
+      
+      <guid>/contribute/mobile/e2e/file-structure/</guid>
+      <description>The folder structure is mostly based on the Detox scaffold which was created on initial run. The folders and files are:
+|-- detox |-- e2e |-- support |-- test |-- config.json |-- environment.js |-- init.js |-- .babelrc |-- .detoxrc.json |-- package-lock.json |-- package.json  /detox/e2e/support or Support Files.  The support folder is a place to put reusable behavior such as Server API and UI commands, or global overrides that should be available to all test files.</description>
+    </item>
+    
+    <item>
       <title>Developer Setup</title>
       <link>/extend/plugins/developer-setup/</link>
       <pubDate>Sat, 11 Jul 2020 23:00:00 -0400</pubDate>
@@ -282,6 +292,18 @@ brew install node@10 libpng   For other platforms, install Node.js v10 from http
     </item>
     
     <item>
+      <title>Setup and Run Android E2E</title>
+      <link>/contribute/mobile/e2e/android/</link>
+      <pubDate>Tue, 01 Sep 2020 09:00:00 +0000</pubDate>
+      
+      <guid>/contribute/mobile/e2e/android/</guid>
+      <description>Local setup   Install the latest Android SDK.
+sdkmanager &amp;quot;system-images;android-30;google_apis;x86&amp;quot; sdkmanager --licenses   Create the emulator using npm run e2e:android-create-emulator from the /detox folder. Android testing requires an emulator named detox_emu_api_30 and the script helps to create it automatically.
+  Test run in debug mode This is the typical flow for local development and test writing:
+ Open a terminal window and run react-native packager by npm install &amp;amp;&amp;amp; npm start from the root folder.</description>
+    </item>
+    
+    <item>
       <title>Developer Workflow</title>
       <link>/extend/plugins/developer-workflow/</link>
       <pubDate>Sat, 11 Jul 2020 23:00:00 -0400</pubDate>
@@ -377,6 +399,15 @@ Requirements  A linux box server with at least 1GB of memory. A copy of the Matt
     </item>
     
     <item>
+      <title>Setup and Run iOS E2E</title>
+      <link>/contribute/mobile/e2e/ios/</link>
+      <pubDate>Tue, 01 Sep 2020 09:00:00 +0000</pubDate>
+      
+      <guid>/contribute/mobile/e2e/ios/</guid>
+      <description>Local setup  Install applesimutils: brew tap wix/brew brew install applesimutils  Set XCode&amp;rsquo;s build location so that the built app, especially debug, is expected at the project&amp;rsquo;s location instead of the Library&amp;rsquo;s folder which is unique/hashed. Open XCode, then go to XCode &amp;gt; Preferences &amp;gt; Locations. Under Derived Data, click Advanced&amp;hellip;. Select Custom &amp;gt; Relative to Workspace, then set Products as Build/Products. Click Done to save the changes.  Test run in debug mode This is the typical flow for local development and test writing:</description>
+    </item>
+    
+    <item>
       <title>Push Notification Service with Corporate Proxy</title>
       <link>/contribute/mobile/push-notifications/corporate-proxy/</link>
       <pubDate>Mon, 09 Mar 2020 11:35:32 +0000</pubDate>
@@ -449,6 +480,18 @@ The server is currently on API version 4.
 Reference Looking for the API reference? That can be found here: https://api.mattermost.com.
 Adding an Endpoint To add an endpoint to API version 4, each item on the following checklist must be completed:
  Document the endpoint Implement the API handler on the server Add a function to the Go driver Write a unit test Submit your implementation!</description>
+    </item>
+    
+    <item>
+      <title>Guide for Writing E2E</title>
+      <link>/contribute/mobile/e2e/guide-for-writing/</link>
+      <pubDate>Tue, 01 Sep 2020 09:00:00 +0000</pubDate>
+      
+      <guid>/contribute/mobile/e2e/guide-for-writing/</guid>
+      <description>Before writing a script, ensure that it has a corresponding test case in Test Management for Jira (TM4J).
+  Create a test file based on folder and file structure.
+  Include TM4J identification (ID) and title in the test description, following the format of it(&#39;[tm4j_id] [title]&#39;) or it(&#39;[tm4j_id]_[step] [title]&#39;) if the test case has multiple steps.
+describe(&amp;#39;Messaging&amp;#39;, () =&amp;gt; { it(&amp;#39;MM-T109 User can\&amp;#39;t send the same message repeatedly&amp;#39;, () =&amp;gt; { // Test steps and assertion here  } }   Target an element using available matchers.</description>
     </item>
     
     <item>
@@ -578,7 +621,7 @@ The Mattermost Push Notification Service version 5.8+ uses FCM to send Push noti
       <guid>/contribute/webapp/end-to-end-tests/</guid>
       <description>This page describes how to run End-to-End (E2E) testing and to build tests for a section or page of the Mattermost web application. Under the hood, we are using Cypress which is &amp;ldquo;fast, easy and reliable testing for anything that runs in a browser.&amp;rdquo;
 Not familiar with Cypress? Here is some documentation that will help you get started:
- Developer Guide API Reference  Quick Overview on How to Run E2E Testing On Your Local Development Machine  Run a local server instance by initiating make run to the mattermost-server folder.</description>
+ Developer Guide API Reference  Quick Overview on How to Run E2E Testing On Your Local Development Machine  Launch a local Mattermost instance by running make run in the mattermost-server directory.</description>
     </item>
     
     <item>

@@ -998,18 +998,6 @@ For example, new machines in AWS should be created without a keypair and use Vau
     </item>
     
     <item>
-      <title>Plugin Release Process</title>
-      <link>/internal/plugin-release-process/</link>
-      <pubDate>Tue, 07 Nov 2017 14:28:35 -0500</pubDate>
-      
-      <guid>/internal/plugin-release-process/</guid>
-      <description>This document outlines the steps required to release a new version of a Mattermost plugin.
-Update version Update plugin.json with the new version:
-{ &amp;#34;id&amp;#34;: &amp;#34;github&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;GitHub&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;GitHub plugin for Mattermost.&amp;#34;, &amp;#34;homepage_url&amp;#34;: &amp;#34;https://github.com/mattermost/mattermost-plugin-github&amp;#34;, &amp;#34;support_url&amp;#34;: &amp;#34;https://github.com/mattermost/mattermost-plugin-github/issues&amp;#34;, &amp;#34;icon_path&amp;#34;: &amp;#34;assets/icon.svg&amp;#34;, - &amp;#34;version&amp;#34;: &amp;#34;0.12.0&amp;#34;, + &amp;#34;version&amp;#34;: &amp;#34;0.13.0&amp;#34;,  &amp;#34;min_server_version&amp;#34;: &amp;#34;5.12.0&amp;#34;, ... } Apply the updated manifest into the server and webapp:
-make apply Submit a pull request referencing the updated plugin.json, server/manifest.go and webapp/src/manifest.</description>
-    </item>
-    
-    <item>
       <title>Tips and Best Practices</title>
       <link>/internal/tips-and-best-practices/</link>
       <pubDate>Tue, 07 Nov 2017 14:28:35 -0500</pubDate>
